@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Sigmar+One&amp;family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background-color: #B9E82B; background-image: url("assets/camo.webp"); background-size: cover; background-position: center top; background-repeat: no-repeat; background-attachment: fixed; }
+  body { font-family: 'Work Sans', system-ui, sans-serif; color: #10130A; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; cursor: url("assets/cursor-bone.png") 8 8, auto; }
+  a, button, label, input, select, textarea, summary { cursor: url("assets/cursor-bone-pointer.png") 10 10, pointer; }
+  a { color: #E8401A; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover { color: #10130A; }
+  ::selection { background: #C2F000; color: #10130A; }
+  input, select, textarea { font-family: inherit; font-size: 16px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="max-width: 100%; overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 50; background-color: #B9E82B; background-image: url('assets/camo.webp'); background-size: cover; background-position: center top; background-repeat: no-repeat; background-attachment: fixed; box-shadow: 0 6px 18px rgba(16,19,10,0.12)">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; gap: 16px; justify-content: space-between">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none">
+        <img src="assets/logo-jicomp.webp" alt="JICOMP" style="height: 68px; width: auto; display: block">
+      </a>
+      <nav style="display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; justify-content: flex-end">
+        <a href="#sobre" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #10130A; text-decoration: none; padding: 8px 10px; white-space: nowrap; border-radius: 8px" style-hover="color: #E8401A; box-shadow: inset 0 -3px 0 #E8401A">Sobre</a>
+        <a href="#modalidades" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #10130A; text-decoration: none; padding: 8px 10px; white-space: nowrap; border-radius: 8px" style-hover="color: #E8401A; box-shadow: inset 0 -3px 0 #E8401A">Modalidades</a>
+        <a href="#edital" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #10130A; text-decoration: none; padding: 8px 10px; white-space: nowrap; border-radius: 8px" style-hover="color: #E8401A; box-shadow: inset 0 -3px 0 #E8401A">Edital</a>
+        <a href="#edicoes" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #10130A; text-decoration: none; padding: 8px 10px; white-space: nowrap; border-radius: 8px" style-hover="color: #E8401A; box-shadow: inset 0 -3px 0 #E8401A">Edições</a>
+        <a href="#comissao" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #10130A; text-decoration: none; padding: 8px 10px; white-space: nowrap; border-radius: 8px" style-hover="color: #E8401A; box-shadow: inset 0 -3px 0 #E8401A">Comissão</a>
+        <a href="#cronograma" style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #10130A; text-decoration: none; padding: 8px 10px; white-space: nowrap; border-radius: 8px" style-hover="color: #E8401A; box-shadow: inset 0 -3px 0 #E8401A">Cronograma</a>
+        <a href="#inscricao" style="flex-shrink: 0; margin-left: 6px; font-family: 'Sigmar One', cursive; font-size: 14px; color: #10130A; background: #FFF6E0; text-decoration: none; padding: 10px 16px; border-radius: 999px; border: 3px solid #10130A; box-shadow: 0 3px 0 #10130A; white-space: nowrap" style-hover="background: #E8401A; color: #FFF6E0">Inscreva-se</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="position: relative">
+    
+  <div style="max-width: 1180px; margin: 0 auto; padding: 48px 20px 64px; display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); align-items: center">
+      <div style="min-width: 0">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: #10130A; color: #C2F000; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px">4ª edição · UFSM</div>
+        <img src="assets/logo-jicomp.webp" alt="Jogos de Integração da Computação — JICOMP" style="width: 100%; max-width: 520px; height: auto; display: block; margin: 20px 0 8px; filter: drop-shadow(0 6px 0 rgba(16,19,10,0.18))">
+        <div style="display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; margin-bottom: 28px">
+          <div style="font-family: 'Sigmar One', cursive; font-size: clamp(26px, 4vw, 38px); color: #10130A; line-height: 1">17 · 10 · 2026</div>
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.4; color: #23290F">Centro de Tecnologia — Santa Maria/RS</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <a href="#inscricao" style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #FFF6E0; background: #E8401A; text-decoration: none; padding: 16px 28px; border-radius: 999px; border: 4px solid #10130A; box-shadow: 0 5px 0 #10130A" style-hover="background: #F7B733; color: #10130A">Inscrever minha equipe</a>
+          <a href="#edital" style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; background: #FFF6E0; text-decoration: none; padding: 16px 28px; border-radius: 999px; border: 4px solid #10130A; box-shadow: 0 5px 0 #10130A" style-hover="background: #C2F000">Ler o edital</a>
+        </div>
+      </div>
+
+      <div style="min-width: 0; display: flex; flex-direction: column; align-items: center">
+        <div style="width: 100%; max-width: 460px; background: #10130A; border: 5px solid #10130A; border-radius: 26px; padding: 22px 18px; box-shadow: 0 8px 0 rgba(16,19,10,0.25)">
+          <div style="text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #C2F000; margin-bottom: 16px">Contagem regressiva</div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px">
+            <div style="background: #FFF6E0; border-radius: 14px; padding: 12px 4px; text-align: center">
+              <div style="font-family: 'Sigmar One', cursive; font-size: clamp(24px, 6vw, 36px); line-height: 1; color: #10130A; font-variant-numeric: tabular-nums">{{ cd.d }}</div>
+              <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5E8C0C; margin-top: 6px">dias</div>
+            </div>
+            <div style="background: #FFF6E0; border-radius: 14px; padding: 12px 4px; text-align: center">
+              <div style="font-family: 'Sigmar One', cursive; font-size: clamp(24px, 6vw, 36px); line-height: 1; color: #10130A; font-variant-numeric: tabular-nums">{{ cd.h }}</div>
+              <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5E8C0C; margin-top: 6px">horas</div>
+            </div>
+            <div style="background: #FFF6E0; border-radius: 14px; padding: 12px 4px; text-align: center">
+              <div style="font-family: 'Sigmar One', cursive; font-size: clamp(24px, 6vw, 36px); line-height: 1; color: #10130A; font-variant-numeric: tabular-nums">{{ cd.m }}</div>
+              <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5E8C0C; margin-top: 6px">min</div>
+            </div>
+            <div style="background: #C2F000; border-radius: 14px; padding: 12px 4px; text-align: center">
+              <div style="font-family: 'Sigmar One', cursive; font-size: clamp(24px, 6vw, 36px); line-height: 1; color: #10130A; font-variant-numeric: tabular-nums">{{ cd.s }}</div>
+              <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #33500A; margin-top: 6px">seg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></section>
+
+  <section id="sobre">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 44px 20px 52px">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #33500A; margin-bottom: 10px">Sobre o evento</div>
+      <h2 style="font-family: 'Sigmar One', cursive; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; margin: 0 0 28px; max-width: 22ch; color: #10130A">A computação inteira em campo</h2>
+      <div style="display: grid; gap: 36px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))">
+        <div style="min-width: 0">
+          <p style="font-size: clamp(17px, 2vw, 20px); line-height: 1.6; margin: 0 0 18px; font-weight: 500; text-wrap: pretty">O campeonato tem como objetivo principal promover a integração entre os cursos de computação da UFSM, incentivando o espírito esportivo, o trabalho em equipe e o fortalecimento dos laços acadêmicos e sociais entre os estudantes.</p>
+          <p style="font-size: 16px; line-height: 1.65; margin: 0; color: #23290F; text-wrap: pretty">O JICOMP mistura modalidades online e presenciais para que todo mundo encontre um lugar na competição, seja jogando, organizando ou torcendo. As equipes podem ser formadas por estudantes de um mesmo curso ou misturar cursos diferentes.</p>
+        </div>
+        <div style="min-width: 0; display: flex; flex-direction: column; gap: 14px">
+          <div style="background: #10130A; color: #FFF6E0; border-radius: 20px; padding: 20px 22px">
+            <div style="font-family: 'Sigmar One', cursive; font-size: 17px; color: #C2F000; margin-bottom: 8px">Público-alvo</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6">Exclusivo para estudantes com matrícula ativa nos cursos de computação da UFSM.&nbsp;</p>
+          </div>
+          <div style="background: #C2F000; border: 3px solid #10130A; border-radius: 20px; padding: 20px 22px">
+            <div style="font-family: 'Sigmar One', cursive; font-size: 17px; margin-bottom: 8px">Organização</div>
+            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #23290F">Comissão organizadora formada por estudantes do PET SI e do PET CC.&nbsp;</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 40px">
+        <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #33500A; margin-bottom: 12px">Cursos participantes</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <span style="background: #FFF6E0; border: 2px solid #10130A; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600">Ciência da Computação</span>
+          <span style="background: #FFF6E0; border: 2px solid #10130A; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600">Sistemas de Informação</span>
+          <span style="background: #FFF6E0; border: 2px solid #10130A; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600">Engenharia de Computação</span>
+          <span style="background: #FFF6E0; border: 2px solid #10130A; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600">Redes de Computadores</span>
+          <span style="background: #FFF6E0; border: 2px solid #10130A; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600">Sistemas para Internet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="modalidades" style="padding: 28px 16px 44px">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 48px 24px 56px; background: #10130A; border-radius: 32px; box-shadow: 0 12px 0 rgba(16,19,10,0.18)">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C2F000; margin-bottom: 10px">Modalidades</div>
+      <h2 style="font-family: 'Sigmar One', cursive; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; margin: 0 0 14px; color: #FFF6E0">vem ai...</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #C9D2B4; max-width: 56ch; margin: 0 0 36px">As modalidades online e presenciais estão em definição pela comissão organizadora e serão anunciadas junto com o edital oficial.</p>
+      <div style="display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))">
+
+        <article style="background: #1B2210; border: 3px solid #5E8C0C; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+            <div style="width: 54px; height: 54px; border-radius: 14px; background: #C2F000; color: #10130A; display: grid; place-items: center; font-family: 'Sigmar One', cursive; font-size: 22px">01</div>
+            <span style="font-family: 'Sigmar One', cursive; font-size: 13px; letter-spacing: 0.04em; background: #C2F000; color: #10130A; padding: 7px 14px; border-radius: 999px">Vem aí</span>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8B77E">Online</div>
+          <h3 style="font-family: 'Sigmar One', cursive; font-size: 21px; margin: 0; color: #FFF6E0">online</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #C9D2B4; flex: 1">cIHRPURHE</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 700">
+            <span style="background: #10130A; color: #C2F000; padding: 6px 10px; border-radius: 8px">Times</span>
+            <span style="background: #10130A; color: #E8F2C8; padding: 6px 10px; border-radius: 8px">5 por time + 1 reserva</span>
+          </div>
+        </article>
+
+        <article style="background: #1B2210; border: 3px solid #5E8C0C; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+            <div style="width: 54px; height: 54px; border-radius: 14px; background: #C2F000; color: #10130A; display: grid; place-items: center; font-family: 'Sigmar One', cursive; font-size: 22px">02</div>
+            <span style="font-family: 'Sigmar One', cursive; font-size: 13px; letter-spacing: 0.04em; background: #C2F000; color: #10130A; padding: 7px 14px; border-radius: 999px">Vem aí</span>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8B77E">Online</div>
+          <h3 style="font-family: 'Sigmar One', cursive; font-size: 21px; margin: 0; color: #FFF6E0">online</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #C9D2B4; flex: 1">icvhriuhveupwi</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 700">
+            <span style="background: #10130A; color: #C2F000; padding: 6px 10px; border-radius: 8px">Times</span>
+            <span style="background: #10130A; color: #E8F2C8; padding: 6px 10px; border-radius: 8px">5 por time + 1 reserva</span>
+          </div>
+        </article>
+
+        <article style="background: #1B2210; border: 3px solid #5E8C0C; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+            <div style="width: 54px; height: 54px; border-radius: 14px; background: #C2F000; color: #10130A; display: grid; place-items: center; font-family: 'Sigmar One', cursive; font-size: 22px">03</div>
+            <span style="font-family: 'Sigmar One', cursive; font-size: 13px; letter-spacing: 0.04em; background: #C2F000; color: #10130A; padding: 7px 14px; border-radius: 999px">Vem aí</span>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8B77E">Online</div>
+          <h3 style="font-family: 'Sigmar One', cursive; font-size: 21px; margin: 0; color: #FFF6E0">online</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #C9D2B4; flex: 1">civHEQPOVIAHRE</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 700">
+            <span style="background: #10130A; color: #C2F000; padding: 6px 10px; border-radius: 8px">Duplas</span>
+            <span style="background: #10130A; color: #E8F2C8; padding: 6px 10px; border-radius: 8px">2 por dupla</span>
+          </div>
+        </article>
+
+        <article style="background: #1B2210; border: 3px solid #5E8C0C; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+            <div style="width: 54px; height: 54px; border-radius: 14px; background: #C2F000; color: #10130A; display: grid; place-items: center; font-family: 'Sigmar One', cursive; font-size: 22px">04</div>
+            <span style="font-family: 'Sigmar One', cursive; font-size: 13px; letter-spacing: 0.04em; background: #C2F000; color: #10130A; padding: 7px 14px; border-radius: 999px">Vem aí</span>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8B77E">Online</div>
+          <h3 style="font-family: 'Sigmar One', cursive; font-size: 21px; margin: 0; color: #FFF6E0">online</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #C9D2B4; flex: 1">saCHPIURVGHU IRE</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 700">
+            <span style="background: #10130A; color: #C2F000; padding: 6px 10px; border-radius: 8px">Individual</span>
+            <span style="background: #10130A; color: #E8F2C8; padding: 6px 10px; border-radius: 8px">1 por curso</span>
+          </div>
+        </article>
+
+        <article style="background: #1B2210; border: 3px solid #5E8C0C; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+            <div style="width: 54px; height: 54px; border-radius: 14px; background: #E8401A; color: #FFF6E0; display: grid; place-items: center; font-family: 'Sigmar One', cursive; font-size: 22px">05</div>
+            <span style="font-family: 'Sigmar One', cursive; font-size: 13px; letter-spacing: 0.04em; background: #C2F000; color: #10130A; padding: 7px 14px; border-radius: 999px">Vem aí</span>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8B77E">Presencial</div>
+          <h3 style="font-family: 'Sigmar One', cursive; font-size: 21px; margin: 0; color: #FFF6E0">presencial</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #C9D2B4; flex: 1">cihpureh8vhr</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 700">
+            <span style="background: #10130A; color: #C2F000; padding: 6px 10px; border-radius: 8px">Times</span>
+            <span style="background: #10130A; color: #E8F2C8; padding: 6px 10px; border-radius: 8px">a confirmar</span>
+          </div>
+        </article>
+
+        <article style="background: #1B2210; border: 3px solid #5E8C0C; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+            <div style="width: 54px; height: 54px; border-radius: 14px; background: #E8401A; color: #FFF6E0; display: grid; place-items: center; font-family: 'Sigmar One', cursive; font-size: 22px">06</div>
+            <span style="font-family: 'Sigmar One', cursive; font-size: 13px; letter-spacing: 0.04em; background: #C2F000; color: #10130A; padding: 7px 14px; border-radius: 999px">Vem aí</span>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8B77E">Presencial</div>
+          <h3 style="font-family: 'Sigmar One', cursive; font-size: 21px; margin: 0; color: #FFF6E0">presencial</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #C9D2B4; flex: 1">ksdahcipuheru</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 700">
+            <span style="background: #10130A; color: #C2F000; padding: 6px 10px; border-radius: 8px">Times</span>
+            <span style="background: #10130A; color: #E8F2C8; padding: 6px 10px; border-radius: 8px">a confirmar</span>
+          </div>
+        </article>
+
+        <article style="background: #1B2210; border: 3px solid #5E8C0C; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+            <div style="width: 54px; height: 54px; border-radius: 14px; background: #E8401A; color: #FFF6E0; display: grid; place-items: center; font-family: 'Sigmar One', cursive; font-size: 22px">07</div>
+            <span style="font-family: 'Sigmar One', cursive; font-size: 13px; letter-spacing: 0.04em; background: #C2F000; color: #10130A; padding: 7px 14px; border-radius: 999px">Vem aí</span>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8B77E">Presencial</div>
+          <h3 style="font-family: 'Sigmar One', cursive; font-size: 21px; margin: 0; color: #FFF6E0">presencial</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #C9D2B4; flex: 1">aslhvuherdifl</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 700">
+            <span style="background: #10130A; color: #C2F000; padding: 6px 10px; border-radius: 8px">Duplas</span>
+            <span style="background: #10130A; color: #E8F2C8; padding: 6px 10px; border-radius: 8px">2 por dupla</span>
+          </div>
+        </article>
+
+        <article style="background: #1B2210; border: 3px solid #5E8C0C; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+            <div style="width: 54px; height: 54px; border-radius: 14px; background: #E8401A; color: #FFF6E0; display: grid; place-items: center; font-family: 'Sigmar One', cursive; font-size: 22px">08</div>
+            <span style="font-family: 'Sigmar One', cursive; font-size: 13px; letter-spacing: 0.04em; background: #C2F000; color: #10130A; padding: 7px 14px; border-radius: 999px">Vem aí</span>
+          </div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A8B77E">Presencial</div>
+          <h3 style="font-family: 'Sigmar One', cursive; font-size: 21px; margin: 0; color: #FFF6E0">presencial</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #C9D2B4; flex: 1">kjsdio;ajfr</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; font-weight: 700">
+            <span style="background: #10130A; color: #C2F000; padding: 6px 10px; border-radius: 8px">Times</span>
+            <span style="background: #10130A; color: #E8F2C8; padding: 6px 10px; border-radius: 8px">a confirmar</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="edital">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 44px 20px 52px">
+      <div style="display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); align-items: start">
+        <div style="min-width: 0; position: sticky; top: 100px">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #33500A; margin-bottom: 10px">Edital</div>
+          <h2 style="font-family: 'Sigmar One', cursive; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; margin: 0 0 16px; color: #10130A">Regras do jogo</h2>
+          <p style="font-size: 16px; line-height: 1.65; color: #23290F; margin: 0 0 22px; max-width: 40ch">Texto provisório. O documento oficial será publicado pela comissão organizadora e substitui qualquer informação desta página.</p>
+          <a href="edital-jicomp-2026.pdf" download="edital-jicomp-2026.pdf" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Sigmar One', cursive; font-size: 16px; color: #FFF6E0; background: #10130A; text-decoration: none; padding: 15px 24px; border-radius: 999px; border: 3px solid #10130A; box-shadow: 0 4px 0 #5E8C0C" style-hover="background: #E8401A">Baixar o edital (PDF)</a>
+          <div style="font-size: 12px; font-weight: 600; color: #33500A; margin-top: 10px">Substitua o arquivo <span style="font-family: ui-monospace, monospace">edital-jicomp-2026.pdf</span> na raiz do site.</div>
+        </div>
+        <div style="min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <details open="true" style="background: #FFF6E0; border: 3px solid #10130A; border-radius: 18px; padding: 16px 18px">
+            <summary style="font-family: 'Sigmar One', cursive; font-size: 17px; color: #10130A; list-style: none">1. Objetivo</summary>
+            <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.65; color: #23290F">Promover a integração entre os cursos de computação da UFSM por meio de competições esportivas e recreativas, incentivando o espírito esportivo e o trabalho em equipe. [texto provisório]</p>
+          </details>
+          <details style="background: #FFF6E0; border: 3px solid #10130A; border-radius: 18px; padding: 16px 18px">
+            <summary style="font-family: 'Sigmar One', cursive; font-size: 17px; color: #10130A; list-style: none">2. Elegibilidade</summary>
+            <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.65; color: #23290F">Podem participar estudantes com matrícula ativa nos cursos de computação da UFSM, comprovada por carteira de estudante ou atestado de matrícula. Cada pessoa pode integrar apenas uma equipe por modalidade. [texto provisório]</p>
+          </details>
+          <details style="background: #FFF6E0; border: 3px solid #10130A; border-radius: 18px; padding: 16px 18px">
+            <summary style="font-family: 'Sigmar One', cursive; font-size: 17px; color: #10130A; list-style: none">3. Regras gerais</summary>
+            <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.65; color: #23290F">Formato de disputa, número de jogadores, duração das partidas, critérios de desempate e procedimento de W.O. serão definidos por modalidade. As equipes devem se apresentar 15 minutos antes do horário previsto. [texto provisório]</p>
+          </details>
+          <details style="background: #FFF6E0; border: 3px solid #10130A; border-radius: 18px; padding: 16px 18px">
+            <summary style="font-family: 'Sigmar One', cursive; font-size: 17px; color: #10130A; list-style: none">4. Penalidades</summary>
+            <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.65; color: #23290F">Condutas antidesportivas, uso de programas não autorizados nas modalidades online e escalação irregular podem resultar em advertência, perda da partida ou eliminação da equipe. [texto provisório]</p>
+          </details>
+          <details style="background: #FFF6E0; border: 3px solid #10130A; border-radius: 18px; padding: 16px 18px">
+            <summary style="font-family: 'Sigmar One', cursive; font-size: 17px; color: #10130A; list-style: none">5. Disposições finais</summary>
+            <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.65; color: #23290F">Os casos omissos serão resolvidos pela comissão organizadora. A inscrição implica a aceitação integral deste edital e a autorização de uso de imagem para divulgação do evento. [texto provisório]</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cronograma">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 44px 20px 52px">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #33500A; margin-bottom: 10px">Cronograma</div>
+      <h2 style="font-family: 'Sigmar One', cursive; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; margin: 0 0 14px; color: #10130A">Datas do JICOMP</h2>
+      <p style="font-size: 15px; font-weight: 600; color: #23290F; margin: 0 0 36px">Datas provisórias, sujeitas a confirmação no edital oficial.</p>
+      <div style="display: flex; flex-direction: column; gap: 0">
+        <div style="display: grid; grid-template-columns: 108px 1fr; gap: 16px; align-items: start; padding-bottom: 22px; border-left: 4px solid #10130A; margin-left: 10px; padding-left: 22px; position: relative">
+          <div style="position: absolute; left: -12px; top: 4px; width: 20px; height: 20px; border-radius: 999px; background: #FFF6E0; border: 4px solid #10130A"></div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2; background: #FFF6E0; border: 2px solid #10130A; border-radius: 10px; padding: 6px 8px; text-align: center">14/09</div>
+          <div>
+            <div style="font-weight: 700; font-size: 17px; margin-bottom: 3px">Abertura das inscrições</div>
+            <div style="font-size: 14px; color: #23290F; line-height: 1.5">Formulário disponível nesta página. Envio do comprovante de matrícula junto da inscrição.</div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 108px 1fr; gap: 16px; align-items: start; padding-bottom: 22px; border-left: 4px solid #10130A; margin-left: 10px; padding-left: 22px; position: relative">
+          <div style="position: absolute; left: -12px; top: 4px; width: 20px; height: 20px; border-radius: 999px; background: #FFF6E0; border: 4px solid #10130A"></div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2; background: #FFF6E0; border: 2px solid #10130A; border-radius: 10px; padding: 6px 8px; text-align: center">05/10</div>
+          <div>
+            <div style="font-weight: 700; font-size: 17px; margin-bottom: 3px">Encerramento das inscrições</div>
+            <div style="font-size: 14px; color: #23290F; line-height: 1.5">Até 23h59. Depois desta data não há troca de jogadores, apenas substituição por reserva já inscrita.</div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 108px 1fr; gap: 16px; align-items: start; padding-bottom: 22px; border-left: 4px solid #10130A; margin-left: 10px; padding-left: 22px; position: relative">
+          <div style="position: absolute; left: -12px; top: 4px; width: 20px; height: 20px; border-radius: 999px; background: #FFF6E0; border: 4px solid #10130A"></div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2; background: #FFF6E0; border: 2px solid #10130A; border-radius: 10px; padding: 6px 8px; text-align: center">08/10</div>
+          <div>
+            <div style="font-weight: 700; font-size: 17px; margin-bottom: 3px">Sorteio e divulgação das chaves</div>
+            <div style="font-size: 14px; color: #23290F; line-height: 1.5">Transmissão ao vivo no servidor do Discord do evento.</div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 108px 1fr; gap: 16px; align-items: start; padding-bottom: 22px; border-left: 4px solid #10130A; margin-left: 10px; padding-left: 22px; position: relative">
+          <div style="position: absolute; left: -12px; top: 4px; width: 20px; height: 20px; border-radius: 999px; background: #FFF6E0; border: 4px solid #10130A"></div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2; background: #FFF6E0; border: 2px solid #10130A; border-radius: 10px; padding: 6px 8px; text-align: center">10—15/10</div>
+          <div>
+            <div style="font-weight: 700; font-size: 17px; margin-bottom: 3px">Eliminatórias online</div>
+            <div style="font-size: 14px; color: #23290F; line-height: 1.5">Partidas online à noite, em horários combinados entre as equipes e a mesa de resultados.</div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 108px 1fr; gap: 16px; align-items: start; padding-bottom: 22px; border-left: 4px solid #10130A; margin-left: 10px; padding-left: 22px; position: relative">
+          <div style="position: absolute; left: -12px; top: 4px; width: 20px; height: 20px; border-radius: 999px; background: #E8401A; border: 4px solid #10130A"></div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2; background: #FFF6E0; border: 2px solid #10130A; border-radius: 10px; padding: 6px 8px; text-align: center">17/10</div>
+          <div>
+            <div style="font-weight: 700; font-size: 17px; margin-bottom: 3px">Dia dos jogos</div>
+            <div style="font-size: 14px; color: #23290F; line-height: 1.5">Abertura às 9h, modalidades presenciais durante o dia e finais no fim da tarde.</div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 108px 1fr; gap: 16px; align-items: start; border-left: 4px solid transparent; margin-left: 10px; padding-left: 22px; position: relative">
+          <div style="position: absolute; left: -12px; top: 4px; width: 20px; height: 20px; border-radius: 999px; background: #F7B733; border: 4px solid #10130A"></div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2; background: #FFF6E0; border: 2px solid #10130A; border-radius: 10px; padding: 6px 8px; text-align: center">17/10</div>
+          <div>
+            <div style="font-weight: 700; font-size: 17px; margin-bottom: 3px">Premiação e confraternização</div>
+            <div style="font-size: 14px; color: #23290F; line-height: 1.5">Entrega de troféus por modalidade e do troféu geral de integração, às 20h.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="edicoes">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 44px 20px 52px">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #33500A; margin-bottom: 10px">Últimas edições</div>
+      <h2 style="font-family: 'Sigmar One', cursive; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; margin: 0 0 14px; color: #10130A">De onde o JICOMP vem</h2>
+      <p style="font-size: 15px; font-weight: 500; color: #23290F; margin: 0 0 32px; max-width: 52ch">Cada edição tem seu tema e sua arte, da primeira até a deste ano. Passe o cursor sobre uma capa para ver o tema, a equipe campeã e as datas.</p>
+      <div style="display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))">
+
+        <article tabIndex="0" onMouseEnter="{{ edOn1 }}" onMouseLeave="{{ edOff1 }}" onFocus="{{ edOn1 }}" onBlur="{{ edOff1 }}" style="position: relative; aspect-ratio: 3 / 4; border-radius: 24px; overflow: hidden; background: #10130A; box-shadow: 0 10px 0 rgba(16,19,10,0.16)">
+          <div style="position: absolute; inset: 0">
+            <image-slot id="jicomp-ed1" shape="rect" placeholder="Arte da I edição"></image-slot>
+          </div>
+          <div style="position: absolute; top: 14px; left: 14px; font-family: 'Sigmar One', cursive; font-size: 14px; color: #10130A; background: #C2F000; padding: 7px 14px; border-radius: 999px; pointer-events: none">I edição</div>
+          <div style="position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; background: linear-gradient(to top, rgba(16,19,10,0.95) 40%, rgba(16,19,10,0.6) 70%, rgba(16,19,10,0.2)); opacity: {{ ov1 }}; transition: opacity 0.25s ease; pointer-events: none">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Tema</div>
+              <div style="font-family: 'Sigmar One', cursive; font-size: 20px; color: #FFF6E0; line-height: 1.15">Tema a preencher</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Campeã</div>
+              <div style="font-size: 16px; font-weight: 600; color: #FFF6E0; line-height: 1.3">Curso campeão a preencher</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Data</div>
+              <div style="font-size: 16px; font-weight: 600; color: #FFF6E0; line-height: 1.3">Data a preencher</div>
+            </div>
+          </div>
+        </article>
+
+        <article tabIndex="0" onMouseEnter="{{ edOn2 }}" onMouseLeave="{{ edOff2 }}" onFocus="{{ edOn2 }}" onBlur="{{ edOff2 }}" style="position: relative; aspect-ratio: 3 / 4; border-radius: 24px; overflow: hidden; background: #10130A; box-shadow: 0 10px 0 rgba(16,19,10,0.16)">
+          <div style="position: absolute; inset: 0">
+            <image-slot id="jicomp-ed2" shape="rect" placeholder="Arte da II edição"></image-slot>
+          </div>
+          <div style="position: absolute; top: 14px; left: 14px; font-family: 'Sigmar One', cursive; font-size: 14px; color: #10130A; background: #C2F000; padding: 7px 14px; border-radius: 999px; pointer-events: none">II edição</div>
+          <div style="position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; background: linear-gradient(to top, rgba(16,19,10,0.95) 40%, rgba(16,19,10,0.6) 70%, rgba(16,19,10,0.2)); opacity: {{ ov2 }}; transition: opacity 0.25s ease; pointer-events: none">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Tema</div>
+              <div style="font-family: 'Sigmar One', cursive; font-size: 20px; color: #FFF6E0; line-height: 1.15">Tema a preencher</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Campeã</div>
+              <div style="font-size: 16px; font-weight: 600; color: #FFF6E0; line-height: 1.3">Curso campeão a preencher</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Data</div>
+              <div style="font-size: 16px; font-weight: 600; color: #FFF6E0; line-height: 1.3">Data a preencher</div>
+            </div>
+          </div>
+        </article>
+
+        <article tabIndex="0" onMouseEnter="{{ edOn3 }}" onMouseLeave="{{ edOff3 }}" onFocus="{{ edOn3 }}" onBlur="{{ edOff3 }}" style="position: relative; aspect-ratio: 3 / 4; border-radius: 24px; overflow: hidden; background: #10130A; box-shadow: 0 10px 0 rgba(16,19,10,0.16)">
+          <div style="position: absolute; inset: 0">
+            <img src="assets/edicao-3.jpeg" alt="Arte da III edição do JICOMP" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+          </div>
+          <div style="position: absolute; top: 14px; left: 14px; font-family: 'Sigmar One', cursive; font-size: 14px; color: #10130A; background: #C2F000; padding: 7px 14px; border-radius: 999px; pointer-events: none">III edição</div>
+          <div style="position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; background: linear-gradient(to top, rgba(16,19,10,0.95) 40%, rgba(16,19,10,0.6) 70%, rgba(16,19,10,0.2)); opacity: {{ ov3 }}; transition: opacity 0.25s ease; pointer-events: none">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Tema</div>
+              <div style="font-family: 'Sigmar One', cursive; font-size: 20px; color: #FFF6E0; line-height: 1.15">Scooby-Doo</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Campeã</div>
+              <div style="font-size: 16px; font-weight: 600; color: #FFF6E0; line-height: 1.3">Curso campeão a preencher</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Data</div>
+              <div style="font-size: 16px; font-weight: 600; color: #FFF6E0; line-height: 1.3">05 e 08 a 13 de dezembro</div>
+            </div>
+          </div>
+        </article>
+
+        <article tabIndex="0" onMouseEnter="{{ edOn4 }}" onMouseLeave="{{ edOff4 }}" onFocus="{{ edOn4 }}" onBlur="{{ edOff4 }}" style="position: relative; aspect-ratio: 3 / 4; border-radius: 24px; overflow: hidden; background: #10130A; box-shadow: 0 10px 0 rgba(16,19,10,0.16); outline: 4px solid #E8401A">
+          <div style="position: absolute; inset: 0">
+            <img src="assets/post.png" alt="Arte da IV edição do JICOMP" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+          </div>
+          <div style="position: absolute; top: 14px; left: 14px; display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none">
+            <div style="font-family: 'Sigmar One', cursive; font-size: 14px; color: #10130A; background: #C2F000; padding: 7px 14px; border-radius: 999px">IV edição</div>
+            <div style="font-family: 'Sigmar One', cursive; font-size: 14px; color: #FFF6E0; background: #E8401A; padding: 7px 14px; border-radius: 999px">Deste ano</div>
+          </div>
+          <div style="position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; background: linear-gradient(to top, rgba(16,19,10,0.95) 40%, rgba(16,19,10,0.6) 70%, rgba(16,19,10,0.2)); opacity: {{ ov4 }}; transition: opacity 0.25s ease; pointer-events: none">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Tema</div>
+              <div style="font-family: 'Sigmar One', cursive; font-size: 20px; color: #FFF6E0; line-height: 1.15">Tema a preencher</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Campeã</div>
+              <div style="font-size: 16px; font-weight: 600; color: #FFF6E0; line-height: 1.3">Em disputa</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C2F000; margin-bottom: 4px">Data</div>
+              <div style="font-size: 16px; font-weight: 600; color: #FFF6E0; line-height: 1.3">17 de outubro de 2026</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="comissao">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 44px 20px 52px">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #33500A; margin-bottom: 10px">Comissão organizadora</div>
+      <h2 style="font-family: 'Sigmar One', cursive; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; margin: 0 0 14px; color: #10130A">Quem faz o JICOMP</h2>
+      <p style="font-size: 15px; font-weight: 500; color: #23290F; margin: 0 0 32px; max-width: 52ch">Estudantes dos cursos de computação da UFSM, com apoio do PET CC e do PET SI. Dúvidas sobre regras e inscrições vão para <a href="mailto:jicomp@inf.ufsm.br" style="color: #E8401A">jicomp@inf.ufsm.br</a>.</p>
+      <div style="display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr))">
+
+        <div style="background: #FFF6E0; border-radius: 20px; padding: 20px">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E8C0C; margin-bottom: 8px">Coordenação geral</div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2">Nome a preencher</div>
+        </div>
+
+        <div style="background: #FFF6E0; border-radius: 20px; padding: 20px">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E8C0C; margin-bottom: 8px">Arbitragem e regras</div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2">Nome a preencher</div>
+        </div>
+
+        <div style="background: #FFF6E0; border-radius: 20px; padding: 20px">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E8C0C; margin-bottom: 8px">Modalidades online</div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2">Nome a preencher</div>
+        </div>
+
+        <div style="background: #FFF6E0; border-radius: 20px; padding: 20px">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E8C0C; margin-bottom: 8px">Modalidades presenciais</div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2">Nome a preencher</div>
+        </div>
+
+        <div style="background: #FFF6E0; border-radius: 20px; padding: 20px">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E8C0C; margin-bottom: 8px">Comunicação e divulgação</div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2">Nome a preencher</div>
+        </div>
+
+        <div style="background: #FFF6E0; border-radius: 20px; padding: 20px">
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5E8C0C; margin-bottom: 8px">Inscrições e credenciamento</div>
+          <div style="font-family: 'Sigmar One', cursive; font-size: 18px; color: #10130A; line-height: 1.2">Nome a preencher</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="inscricao" style="padding: 28px 16px 56px">
+    <div style="max-width: 900px; margin: 0 auto; padding: 48px 24px 56px; background: #10130A; border-radius: 32px; box-shadow: 0 12px 0 rgba(16,19,10,0.18)">
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C2F000; margin-bottom: 10px">Inscrição</div>
+      <h2 style="font-family: 'Sigmar One', cursive; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; margin: 0 0 14px; color: #FFF6E0">Monte sua equipe</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #C9D2B4; max-width: 54ch; margin: 0 0 32px">Uma inscrição por equipe. Use o e-mail institucional (<span style="font-family: ui-monospace, monospace; color: #C2F000">@acad.ufsm.br</span> ou <span style="font-family: ui-monospace, monospace; color: #C2F000">@inf.ufsm.br</span>) e anexe o comprovante de matrícula de cada jogador.</p>
+
+      <sc-if value="{{ isSuccess }}" hint-placeholder-val="{{ false }}">
+        <div style="background: #C2F000; border: 4px solid #FFF6E0; border-radius: 24px; padding: 28px; text-align: center">
+          <div style="font-family: 'Sigmar One', cursive; font-size: 26px; color: #10130A; margin-bottom: 8px">Inscrição enviada</div>
+          <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.6; color: #23290F">Guardamos os dados da equipe <strong>{{ sentTeam }}</strong>. A confirmação chega por e-mail em até 3 dias úteis.</p>
+          <button type="button" onClick="{{ resetForm }}" style="font-family: 'Sigmar One', cursive; font-size: 15px; background: #10130A; color: #C2F000; border: none; padding: 13px 22px; border-radius: 999px">Inscrever outra equipe</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isForm }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onSubmit }}" noValidate="true" style="display: flex; flex-direction: column; gap: 22px">
+
+          <fieldset style="border: 3px solid #23290F; border-radius: 22px; padding: 20px; margin: 0; background: #1B2210; display: flex; flex-direction: column; gap: 16px">
+            <legend style="font-family: 'Sigmar One', cursive; font-size: 15px; color: #C2F000; padding: 0 8px">Dados da equipe</legend>
+            <label style="display: block">
+              <span style="display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 7px">Nome da equipe *</span>
+              <input type="text" value="{{ team }}" onInput="{{ onTeam }}" placeholder="Ex.: Segfault FC" style="width: 100%; padding: 13px 14px; border-radius: 12px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A; font-weight: 500">
+            </label>
+            <label style="display: block">
+              <span style="display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 7px">Curso predominante *</span>
+              <select value="{{ course }}" onChange="{{ onCourse }}" style="width: 100%; padding: 13px 14px; border-radius: 12px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A; font-weight: 500">
+                <option value="">Selecione…</option>
+                <option value="Ciência da Computação">Ciência da Computação</option>
+                <option value="Sistemas de Informação">Sistemas de Informação</option>
+                <option value="Engenharia de Computação">Engenharia de Computação</option>
+                <option value="Redes de Computadores">Redes de Computadores</option>
+                <option value="Sistemas para Internet">Sistemas para Internet</option>
+                <option value="Equipe mista">Equipe mista</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <fieldset style="border: 3px solid #23290F; border-radius: 22px; padding: 20px; margin: 0; background: #1B2210; display: flex; flex-direction: column; gap: 16px">
+            <legend style="font-family: 'Sigmar One', cursive; font-size: 15px; color: #C2F000; padding: 0 8px">Jogadores</legend>
+            <sc-for list="{{ players }}" as="p" hint-placeholder-count="1">
+              <div style="border: 2px solid #3A4227; border-radius: 18px; padding: 16px; background: #14180C; display: flex; flex-direction: column; gap: 14px">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+                  <div style="font-family: 'Sigmar One', cursive; font-size: 15px; color: #FFF6E0">Jogador {{ p.num }}</div>
+                  <sc-if value="{{ p.canRemove }}" hint-placeholder-val="{{ false }}">
+                    <button type="button" onClick="{{ p.onRemove }}" style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: transparent; color: #E8401A; border: 2px solid #E8401A; padding: 7px 12px; border-radius: 999px">Remover</button>
+                  </sc-if>
+                </div>
+                <div style="display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))">
+                  <label style="display: block; min-width: 0">
+                    <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">Nome completo *</span>
+                    <input type="text" value="{{ p.nome }}" onInput="{{ p.onNome }}" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A">
+                  </label>
+                  <label style="display: block; min-width: 0">
+                    <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">E-mail institucional *</span>
+                    <input type="email" value="{{ p.email }}" onInput="{{ p.onEmail }}" placeholder="nome@acad.ufsm.br" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A">
+                    <sc-if value="{{ p.emailBad }}" hint-placeholder-val="{{ false }}">
+                      <span style="display: block; font-size: 12px; font-weight: 600; color: #FF7A55; margin-top: 6px">Use um e-mail @acad.ufsm.br ou @inf.ufsm.br</span>
+                    </sc-if>
+                  </label>
+                  <label style="display: block; min-width: 0">
+                    <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">Usuário do Discord *</span>
+                    <input type="text" value="{{ p.discord }}" onInput="{{ p.onDiscord }}" placeholder="usuario#0000" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A">
+                  </label>
+                  <label style="display: block; min-width: 0">
+                    <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">Riot ID (League of Legends)</span>
+                    <input type="text" value="{{ p.lol }}" onInput="{{ p.onLol }}" placeholder="Nick#BR1" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A">
+                  </label>
+                  <label style="display: block; min-width: 0">
+                    <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">Riot ID (Valorant)</span>
+                    <input type="text" value="{{ p.valorant }}" onInput="{{ p.onValorant }}" placeholder="Nick#TAG" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A">
+                  </label>
+                  <label style="display: block; min-width: 0">
+                    <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">Steam / CS2</span>
+                    <input type="text" value="{{ p.cs }}" onInput="{{ p.onCs }}" placeholder="steamcommunity.com/id/…" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A">
+                  </label>
+                </div>
+                <label style="display: block">
+                  <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">Carteira de estudante ou comprovante de matrícula *</span>
+                  <input type="file" accept="image/*,application/pdf" onChange="{{ p.onFile }}" style="width: 100%; padding: 11px; border-radius: 11px; border: 2px dashed #5E8C0C; background: #1B2210; color: #C9D2B4; font-size: 14px">
+                  <sc-if value="{{ p.hasFile }}" hint-placeholder-val="{{ false }}">
+                    <span style="display: block; font-size: 12px; font-weight: 600; color: #C2F000; margin-top: 6px">Anexado: {{ p.fileName }}</span>
+                  </sc-if>
+                </label>
+              </div>
+            </sc-for>
+            <sc-if value="{{ canAdd }}" hint-placeholder-val="{{ true }}">
+              <button type="button" onClick="{{ addPlayer }}" style="align-self: flex-start; font-family: 'Sigmar One', cursive; font-size: 14px; background: #C2F000; color: #10130A; border: 3px solid #10130A; padding: 12px 20px; border-radius: 999px">+ Adicionar jogador</button>
+            </sc-if>
+          </fieldset>
+
+          <fieldset style="border: 3px solid #23290F; border-radius: 22px; padding: 20px; margin: 0; background: #1B2210; display: flex; flex-direction: column; gap: 16px">
+            <legend style="font-family: 'Sigmar One', cursive; font-size: 15px; color: #C2F000; padding: 0 8px">Escalação por modalidade</legend>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #8A9670">Liste quem joga cada modalidade, separando os nomes por vírgula. Deixe em branco se a equipe não vai disputar.</p>
+            <label style="display: block">
+              <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">League of Legends</span>
+              <textarea rows="2" value="{{ rLol }}" onInput="{{ onRLol }}" placeholder="Ana, Bruno, Caio, Dani, Eva (+ reserva)" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A; resize: vertical"></textarea>
+            </label>
+            <label style="display: block">
+              <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">Valorant</span>
+              <textarea rows="2" value="{{ rVal }}" onInput="{{ onRVal }}" placeholder="Nomes dos jogadores" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A; resize: vertical"></textarea>
+            </label>
+            <label style="display: block">
+              <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">Counter-Strike 2</span>
+              <textarea rows="2" value="{{ rCs }}" onInput="{{ onRCs }}" placeholder="Nomes dos jogadores" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A; resize: vertical"></textarea>
+            </label>
+            <label style="display: block">
+              <span style="display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D2B4; margin-bottom: 6px">Modalidades presenciais (a definir)</span>
+              <textarea rows="2" value="{{ rPres }}" onInput="{{ onRPres }}" placeholder="Quem tem interesse nas modalidades presenciais" style="width: 100%; padding: 12px 13px; border-radius: 11px; border: 2px solid #3A4227; background: #FFF6E0; color: #10130A; resize: vertical"></textarea>
+            </label>
+          </fieldset>
+
+          <label style="display: flex; gap: 12px; align-items: flex-start; background: #1B2210; border: 3px solid #23290F; border-radius: 18px; padding: 18px">
+            <input type="checkbox" checked="{{ accepted }}" onChange="{{ onAccept }}" style="width: 22px; height: 22px; flex-shrink: 0; accent-color: #C2F000; margin: 0">
+            <span style="font-size: 15px; line-height: 1.55; color: #FFF6E0">Li e aceito o <a href="#edital" style="color: #C2F000">edital do JICOMP 2026</a>, incluindo as regras de elegibilidade, penalidades e o uso de imagem para divulgação do evento. *</span>
+          </label>
+
+          <sc-if value="{{ hasErrors }}" hint-placeholder-val="{{ false }}">
+            <div style="background: #2A1109; border: 3px solid #E8401A; border-radius: 18px; padding: 18px">
+              <div style="font-family: 'Sigmar One', cursive; font-size: 15px; color: #FF7A55; margin-bottom: 10px">Corrija antes de enviar</div>
+              <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">
+                <sc-for list="{{ errors }}" as="e" hint-placeholder-count="0">
+                  <li style="font-size: 14px; line-height: 1.5; color: #FFD9CC">{{ e.msg }}</li>
+                </sc-for>
+              </ul>
+            </div>
+          </sc-if>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+            <button type="submit" disabled="{{ isSending }}" style="font-family: 'Sigmar One', cursive; font-size: 19px; color: #10130A; background: #C2F000; border: 4px solid #FFF6E0; padding: 17px 32px; border-radius: 999px; box-shadow: 0 5px 0 #5E8C0C">{{ submitLabel }}</button>
+            <span style="font-size: 13px; color: #8A9670; max-width: 30ch">Campos com * são obrigatórios.</span>
+          </div>
+        </form>
+      </sc-if>
+    </div>
+  </section>
+
+  <footer style="color: #10130A; position: relative; z-index: 1; box-shadow: 0 -6px 18px rgba(16,19,10,0.12)">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 40px 20px; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items: center">
+      <img src="assets/logo-jicomp.webp" alt="JICOMP" style="width: 190px; height: auto; display: block">
+      <div style="font-size: 14px; line-height: 1.7; font-weight: 500; color: #10130A">
+        Jogos de Integração da Computação · UFSM · Season 4</div>
+      <div style="font-size: 12px; color: #23290F; line-height: 1.6">Apoio do PET CC e do PET SI. Informações desta página são provisórias até a publicação do edital oficial.</div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+// ─────────────────────────────────────────────────────────────
+// Google Sheets: cole aqui a URL do Web App do Google Apps Script
+// (Implantar › Nova implantação › Tipo: App da Web › Acesso: qualquer pessoa).
+// Enquanto estiver vazio, o formulário valida e mostra o sucesso sem enviar,
+// registrando o payload no console do navegador.
+const SHEETS_ENDPOINT = "";
+// Exemplo de doPost no Apps Script:
+//   function doPost(e) {
+//     const data = JSON.parse(e.postData.contents);
+//     const sheet = SpreadsheetApp.getActiveSheet();
+//     data.jogadores.forEach(function (j) {
+//       sheet.appendRow([new Date(), data.equipe, data.curso, j.nome, j.email,
+//         j.discord, j.lol, j.valorant, j.cs, j.comprovante,
+//         data.escalacao.lol, data.escalacao.valorant, data.escalacao.cs,
+//         data.escalacao.presenciais, data.aceiteEdital]);
+//     });
+//     return ContentService.createTextOutput(JSON.stringify({ ok: true }))
+//       .setMimeType(ContentService.MimeType.JSON);
+//   }
+// ─────────────────────────────────────────────────────────────
+
+const TARGET = new Date("2026-10-17T09:00:00-03:00").getTime();
+const EMAIL_RE = /^[^\s@]+@(acad|inf)\.ufsm\.br$/i;
+const MAX_PLAYERS = 10;
+const emptyPlayer = () => ({ nome: "", email: "", discord: "", lol: "", valorant: "", cs: "", fileName: "" });
+
+class Component extends DCLogic {
+  state = {
+    now: Date.now(),
+    team: "",
+    course: "",
+    players: [emptyPlayer()],
+    roster: { lol: "", valorant: "", cs: "", presenciais: "" },
+    accepted: false,
+    errors: [],
+    touched: false,
+    status: "idle",
+    sentTeam: "",
+    hoverEd: null
+  };
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  countdown() {
+    const diff = Math.max(0, TARGET - this.state.now);
+    const s = Math.floor(diff / 1000);
+    const pad = (n, l) => String(n).padStart(l, "0");
+    return {
+      d: pad(Math.floor(s / 86400), 2),
+      h: pad(Math.floor((s % 86400) / 3600), 2),
+      m: pad(Math.floor((s % 3600) / 60), 2),
+      s: pad(s % 60, 2)
+    };
+  }
+
+  setPlayer(i, key, value) {
+    this.setState((st) => {
+      const players = st.players.map((p, j) => (j === i ? Object.assign({}, p, { [key]: value }) : p));
+      return { players };
+    });
+  }
+
+  validate() {
+    const st = this.state;
+    const errs = [];
+    if (!st.team.trim()) errs.push("Informe o nome da equipe.");
+    if (!st.course) errs.push("Selecione o curso predominante da equipe.");
+    st.players.forEach((p, i) => {
+      const n = i + 1;
+      if (!p.nome.trim()) errs.push("Jogador " + n + ": nome completo é obrigatório.");
+      if (!p.email.trim()) errs.push("Jogador " + n + ": e-mail institucional é obrigatório.");
+      else if (!EMAIL_RE.test(p.email.trim())) errs.push("Jogador " + n + ": use um e-mail @acad.ufsm.br ou @inf.ufsm.br.");
+      if (!p.discord.trim()) errs.push("Jogador " + n + ": usuário do Discord é obrigatório.");
+      if (!p.fileName) errs.push("Jogador " + n + ": anexe a carteira de estudante ou o comprovante de matrícula.");
+    });
+    if (!st.accepted) errs.push("É preciso aceitar o edital para concluir a inscrição.");
+    return errs;
+  }
+
+  async submit(e) {
+    e.preventDefault();
+    const errors = this.validate();
+    this.setState({ errors, touched: true });
+    if (errors.length) return;
+
+    const st = this.state;
+    const payload = {
+      enviadoEm: new Date().toISOString(),
+      equipe: st.team.trim(),
+      curso: st.course,
+      aceiteEdital: true,
+      escalacao: st.roster,
+      jogadores: st.players.map((p) => ({
+        nome: p.nome.trim(),
+        email: p.email.trim().toLowerCase(),
+        discord: p.discord.trim(),
+        lol: p.lol.trim(),
+        valorant: p.valorant.trim(),
+        cs: p.cs.trim(),
+        comprovante: p.fileName
+      }))
+    };
+
+    this.setState({ status: "sending" });
+    try {
+      if (SHEETS_ENDPOINT) {
+        await fetch(SHEETS_ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+      } else {
+        console.log("[JICOMP] payload da inscrição (endpoint não configurado):", payload);
+        await new Promise((r) => setTimeout(r, 700));
+      }
+      this.setState({ status: "ok", sentTeam: payload.equipe, errors: [] });
+    } catch (err) {
+      console.error(err);
+      this.setState({
+        status: "idle",
+        errors: ["Não foi possível enviar agora. Tente novamente ou escreva para jicomp@inf.ufsm.br."]
+      });
+    }
+  }
+
+  renderVals() {
+    const st = this.state;
+    const many = st.players.length > 1;
+    const hover = {};
+    [1, 2, 3, 4].forEach((n) => {
+      hover["ov" + n] = st.hoverEd === n ? 1 : 0;
+      hover["edOn" + n] = () => this.setState({ hoverEd: n });
+      hover["edOff" + n] = () => this.setState({ hoverEd: null });
+    });
+    return Object.assign(hover, {
+      cd: this.countdown(),
+      team: st.team,
+      course: st.course,
+      accepted: st.accepted,
+      rLol: st.roster.lol,
+      rVal: st.roster.valorant,
+      rCs: st.roster.cs,
+      rPres: st.roster.presenciais,
+      isForm: st.status !== "ok",
+      isSuccess: st.status === "ok",
+      isSending: st.status === "sending",
+      submitLabel: st.status === "sending" ? "Enviando…" : "Enviar inscrição",
+      sentTeam: st.sentTeam,
+      errors: st.errors.map((msg, i) => ({ msg, key: i })),
+      hasErrors: st.errors.length > 0,
+      canAdd: st.players.length < MAX_PLAYERS,
+      onTeam: (e) => this.setState({ team: e.target.value }),
+      onCourse: (e) => this.setState({ course: e.target.value }),
+      onAccept: (e) => this.setState({ accepted: e.target.checked }),
+      onRLol: (e) => this.setState((s) => ({ roster: Object.assign({}, s.roster, { lol: e.target.value }) })),
+      onRVal: (e) => this.setState((s) => ({ roster: Object.assign({}, s.roster, { valorant: e.target.value }) })),
+      onRCs: (e) => this.setState((s) => ({ roster: Object.assign({}, s.roster, { cs: e.target.value }) })),
+      onRPres: (e) => this.setState((s) => ({ roster: Object.assign({}, s.roster, { presenciais: e.target.value }) })),
+      addPlayer: () => this.setState((s) => ({ players: s.players.concat([emptyPlayer()]) })),
+      onSubmit: (e) => this.submit(e),
+      resetForm: () =>
+        this.setState({
+          status: "idle",
+          team: "",
+          course: "",
+          players: [emptyPlayer()],
+          roster: { lol: "", valorant: "", cs: "", presenciais: "" },
+          accepted: false,
+          errors: [],
+          touched: false
+        }),
+      players: st.players.map((p, i) =>
+        Object.assign({}, p, {
+          num: i + 1,
+          canRemove: many,
+          hasFile: !!p.fileName,
+          emailBad: st.touched && !!p.email.trim() && !EMAIL_RE.test(p.email.trim()),
+          onNome: (e) => this.setPlayer(i, "nome", e.target.value),
+          onEmail: (e) => this.setPlayer(i, "email", e.target.value),
+          onDiscord: (e) => this.setPlayer(i, "discord", e.target.value),
+          onLol: (e) => this.setPlayer(i, "lol", e.target.value),
+          onValorant: (e) => this.setPlayer(i, "valorant", e.target.value),
+          onCs: (e) => this.setPlayer(i, "cs", e.target.value),
+          onFile: (e) => {
+            const f = e.target.files && e.target.files[0];
+            this.setPlayer(i, "fileName", f ? f.name : "");
+          },
+          onRemove: () => this.setState((s) => ({ players: s.players.filter((_, j) => j !== i) }))
+        })
+      )
+    });
+  }
+}
+
+</script>
+</body>
+</html>
