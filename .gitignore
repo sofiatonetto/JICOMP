@@ -2,4 +2,4 @@
 .thumbnail
 node_modules/
 .vercel/
-*.json
+package-lock.json

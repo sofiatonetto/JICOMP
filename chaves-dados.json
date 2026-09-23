@@ -1,0 +1,1336 @@
+{
+  "exportedAt": "2026-09-23T15:04:06.043Z",
+  "teams": [
+    "zuma",
+    "sxg",
+    "bsx",
+    "stow",
+    "los",
+    "vks",
+    "t1",
+    "gen"
+  ],
+  "config": {
+    "pts": [
+      250,
+      180,
+      150,
+      120,
+      100,
+      80,
+      60,
+      40
+    ]
+  },
+  "draws": {
+    "lol": {
+      "type": "swiss2",
+      "fmts": {
+        "round": "bo1",
+        "sf": "bo3",
+        "final": "bo5",
+        "third": "bo3"
+      },
+      "rounds": [
+        [
+          {
+            "id": "lol-r0-m0",
+            "a": "sxg",
+            "b": "los",
+            "stage": "round",
+            "sa": 1,
+            "sb": 0,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "lol-r0-m1",
+            "a": "vks",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "lol-r0-m2",
+            "a": "t1",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "lol-r0-m3",
+            "a": "bsx",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ]
+      ],
+      "sf": null,
+      "final": null,
+      "third": null,
+      "__key": "lol"
+    },
+    "cs2": {
+      "type": "swiss2",
+      "fmts": {
+        "round": "bo1",
+        "sf": "bo3",
+        "final": "bo5",
+        "third": "bo3"
+      },
+      "rounds": [
+        [
+          {
+            "id": "cs2-r0-m0",
+            "a": "stow",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "cs2-r0-m1",
+            "a": "t1",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "cs2-r0-m2",
+            "a": "vks",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "cs2-r0-m3",
+            "a": "bsx",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ]
+      ],
+      "sf": null,
+      "final": null,
+      "third": null,
+      "__key": "cs2"
+    },
+    "valorant": {
+      "type": "ko",
+      "fmts": {
+        "r0": "bo9",
+        "r1": "bo9",
+        "r2": "bo9",
+        "third": "bo9"
+      },
+      "seeds": [
+        "bsx",
+        "los",
+        "gen",
+        "stow",
+        "sxg",
+        "zuma",
+        "vks",
+        "t1"
+      ],
+      "rounds": [
+        [
+          {
+            "id": "valorant-r0-m0",
+            "a": "bsx",
+            "b": "t1",
+            "stage": "r0",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "valorant-r0-m1",
+            "a": "stow",
+            "b": "sxg",
+            "stage": "r0",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "valorant-r0-m2",
+            "a": "los",
+            "b": "vks",
+            "stage": "r0",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "valorant-r0-m3",
+            "a": "gen",
+            "b": "zuma",
+            "stage": "r0",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "valorant-r1-m0",
+            "a": null,
+            "b": null,
+            "stage": "r1",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "valorant-r1-m1",
+            "a": null,
+            "b": null,
+            "stage": "r1",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "valorant-r2-m0",
+            "a": null,
+            "b": null,
+            "stage": "r2",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ]
+      ],
+      "third": {
+        "id": "valorant-third",
+        "a": null,
+        "b": null,
+        "stage": "third",
+        "sa": null,
+        "sb": null,
+        "pen": null,
+        "locked": false,
+        "nd": true
+      },
+      "__key": "valorant"
+    },
+    "clash": {
+      "type": "rr",
+      "fmts": {
+        "round": "bo3",
+        "final": "bo5"
+      },
+      "rounds": [
+        [
+          {
+            "id": "clash-r0-m0",
+            "a": "t1",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r0-m1",
+            "a": "vks",
+            "b": "bsx",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r0-m2",
+            "a": "los",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r0-m3",
+            "a": "zuma",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "clash-r1-m0",
+            "a": "t1",
+            "b": "bsx",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r1-m1",
+            "a": "stow",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r1-m2",
+            "a": "vks",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r1-m3",
+            "a": "los",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "clash-r2-m0",
+            "a": "t1",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r2-m1",
+            "a": "bsx",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r2-m2",
+            "a": "stow",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r2-m3",
+            "a": "vks",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "clash-r3-m0",
+            "a": "t1",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r3-m1",
+            "a": "gen",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r3-m2",
+            "a": "bsx",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r3-m3",
+            "a": "stow",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "clash-r4-m0",
+            "a": "t1",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r4-m1",
+            "a": "sxg",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r4-m2",
+            "a": "gen",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r4-m3",
+            "a": "bsx",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "clash-r5-m0",
+            "a": "t1",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r5-m1",
+            "a": "zuma",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r5-m2",
+            "a": "sxg",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r5-m3",
+            "a": "gen",
+            "b": "bsx",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "clash-r6-m0",
+            "a": "t1",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r6-m1",
+            "a": "los",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r6-m2",
+            "a": "zuma",
+            "b": "bsx",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "clash-r6-m3",
+            "a": "sxg",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ]
+      ],
+      "final": {
+        "id": "clash-final",
+        "a": null,
+        "b": null,
+        "stage": "final",
+        "sa": null,
+        "sb": null,
+        "pen": null,
+        "locked": false,
+        "nd": true
+      },
+      "tied": null,
+      "__key": "clash"
+    },
+    "geo": {
+      "type": "groups",
+      "fmts": {
+        "round": "bo1",
+        "sf": "bo1",
+        "final": "bo1",
+        "third": "bo1"
+      },
+      "drawInGroups": false,
+      "groupA": [
+        "gen",
+        "stow",
+        "sxg",
+        "vks"
+      ],
+      "groupB": [
+        "los",
+        "bsx",
+        "zuma",
+        "t1"
+      ],
+      "roundsA": [
+        [
+          {
+            "id": "geo-A-r0-m0",
+            "a": "gen",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "geo-A-r0-m1",
+            "a": "stow",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "geo-A-r1-m0",
+            "a": "gen",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "geo-A-r1-m1",
+            "a": "vks",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "geo-A-r2-m0",
+            "a": "gen",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "geo-A-r2-m1",
+            "a": "sxg",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ]
+      ],
+      "roundsB": [
+        [
+          {
+            "id": "geo-B-r0-m0",
+            "a": "los",
+            "b": "t1",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "geo-B-r0-m1",
+            "a": "bsx",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "geo-B-r1-m0",
+            "a": "los",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "geo-B-r1-m1",
+            "a": "t1",
+            "b": "bsx",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "geo-B-r2-m0",
+            "a": "los",
+            "b": "bsx",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "geo-B-r2-m1",
+            "a": "zuma",
+            "b": "t1",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ]
+      ],
+      "sf": null,
+      "final": null,
+      "third": null,
+      "__key": "geo"
+    },
+    "fifa": {
+      "type": "groups",
+      "fmts": {
+        "round": "free",
+        "sf": "free",
+        "final": "free",
+        "third": "free"
+      },
+      "drawInGroups": true,
+      "groupA": [
+        "sxg",
+        "stow",
+        "t1",
+        "bsx"
+      ],
+      "groupB": [
+        "zuma",
+        "los",
+        "gen",
+        "vks"
+      ],
+      "roundsA": [
+        [
+          {
+            "id": "fifa-A-r0-m0",
+            "a": "sxg",
+            "b": "bsx",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          },
+          {
+            "id": "fifa-A-r0-m1",
+            "a": "stow",
+            "b": "t1",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          }
+        ],
+        [
+          {
+            "id": "fifa-A-r1-m0",
+            "a": "sxg",
+            "b": "t1",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          },
+          {
+            "id": "fifa-A-r1-m1",
+            "a": "bsx",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          }
+        ],
+        [
+          {
+            "id": "fifa-A-r2-m0",
+            "a": "sxg",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          },
+          {
+            "id": "fifa-A-r2-m1",
+            "a": "t1",
+            "b": "bsx",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          }
+        ]
+      ],
+      "roundsB": [
+        [
+          {
+            "id": "fifa-B-r0-m0",
+            "a": "zuma",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          },
+          {
+            "id": "fifa-B-r0-m1",
+            "a": "los",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          }
+        ],
+        [
+          {
+            "id": "fifa-B-r1-m0",
+            "a": "zuma",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          },
+          {
+            "id": "fifa-B-r1-m1",
+            "a": "vks",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          }
+        ],
+        [
+          {
+            "id": "fifa-B-r2-m0",
+            "a": "zuma",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          },
+          {
+            "id": "fifa-B-r2-m1",
+            "a": "gen",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false
+          }
+        ]
+      ],
+      "sf": null,
+      "final": null,
+      "third": null,
+      "__key": "fifa"
+    },
+    "chess": {
+      "type": "swissN",
+      "fmts": {
+        "round": "chess"
+      },
+      "maxRounds": 3,
+      "rounds": [
+        [
+          {
+            "id": "chess-r0-m0",
+            "a": "t1",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "tagA": "brancas",
+            "tagB": "pretas"
+          },
+          {
+            "id": "chess-r0-m1",
+            "a": "gen",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "tagA": "brancas",
+            "tagB": "pretas"
+          },
+          {
+            "id": "chess-r0-m2",
+            "a": "stow",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "tagA": "brancas",
+            "tagB": "pretas"
+          },
+          {
+            "id": "chess-r0-m3",
+            "a": "bsx",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "tagA": "brancas",
+            "tagB": "pretas"
+          }
+        ]
+      ],
+      "__key": "chess"
+    },
+    "truco": {
+      "type": "rrplain",
+      "fmts": {
+        "round": "bo3"
+      },
+      "rounds": [
+        [
+          {
+            "id": "truco-r0-m0",
+            "a": "bsx",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r0-m1",
+            "a": "stow",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r0-m2",
+            "a": "t1",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r0-m3",
+            "a": "vks",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "truco-r1-m0",
+            "a": "bsx",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r1-m1",
+            "a": "sxg",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r1-m2",
+            "a": "stow",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r1-m3",
+            "a": "t1",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "truco-r2-m0",
+            "a": "bsx",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r2-m1",
+            "a": "zuma",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r2-m2",
+            "a": "sxg",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r2-m3",
+            "a": "stow",
+            "b": "t1",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "truco-r3-m0",
+            "a": "bsx",
+            "b": "los",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r3-m1",
+            "a": "gen",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r3-m2",
+            "a": "zuma",
+            "b": "t1",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r3-m3",
+            "a": "sxg",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "truco-r4-m0",
+            "a": "bsx",
+            "b": "vks",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r4-m1",
+            "a": "los",
+            "b": "t1",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r4-m2",
+            "a": "gen",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r4-m3",
+            "a": "zuma",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "truco-r5-m0",
+            "a": "bsx",
+            "b": "t1",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r5-m1",
+            "a": "vks",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r5-m2",
+            "a": "los",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r5-m3",
+            "a": "gen",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "truco-r6-m0",
+            "a": "bsx",
+            "b": "stow",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r6-m1",
+            "a": "t1",
+            "b": "sxg",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r6-m2",
+            "a": "vks",
+            "b": "zuma",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "truco-r6-m3",
+            "a": "los",
+            "b": "gen",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ]
+      ],
+      "__key": "truco"
+    }
+  }
+}
