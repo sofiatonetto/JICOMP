@@ -24,6 +24,14 @@
   a{color:var(--orange);}
   h1,h2,h3,.display{font-family:'Sigmar One',cursive;}
   .wrap{max-width:760px; margin:0 auto; padding:20px 16px 60px;}
+  .success-image{
+    display:block;
+    width:min(100%, 680px);
+    height:auto;
+    margin:0 auto 18px;
+    border-radius:16px;
+  }
+
 
   header.top{
     position:sticky; top:0; z-index:20;
@@ -157,6 +165,8 @@
         <h2 class="step-title">Identificação da equipe</h2>
         <p class="step-sub">Quem preenche esta inscrição é responsável pelos dados de toda a equipe e precisa fazer parte dela.</p>
 
+        <div class="alert warn">Antes de escalar os jogadores, confira os horários dos jogos e certifique-se de não inscrever a mesma pessoa em modalidades que ocorrem simultaneamente.</div>
+
         <div class="field" data-field="nomeEquipe">
           <label class="field-label">Nome da equipe</label>
           <input type="text" id="nomeEquipe">
@@ -221,6 +231,7 @@
         <h2 class="step-title">Modalidades</h2>
         <p class="step-sub">Escolha quem joga em cada modalidade. Uma pessoa pode participar de mais de uma modalidade — só avisamos se detectarmos conflito de horário conhecido.</p>
         <div class="alert info">Participantes de outros cursos da UFSM (externos) têm limite por modalidade: 1 em LoL, 1 em CS2, 1 em Valorant e 1 no total somando as modalidades presenciais (Clash Royale, GeoGuessr, Truco, FIFA, Xadrez). O sistema avisa quando esse limite é ultrapassado, mas a validação final é manual pela comissão.</div>
+        <div class="alert info">Lembrando, é responsabilidade da equipe de inscrever os jogadores, confira se as modalidades presenciais que os integrantes irão participar não coincidem horários.</div>
         <div id="modalityList"></div>
         <div class="nav-row">
           <button class="btn ghost" data-prev>Voltar</button>
@@ -241,49 +252,8 @@
 
       <!-- ETAPA 5 -->
       <section class="card step" data-step="5" style="display:none">
-        <h2 class="step-title">Doação solidária</h2>
-        <p class="step-sub" id="donationTarget">Meta de referência: <strong>150 pontos</strong> por equipe.</p>
-        <div class="alert warn">O edital tem uma inconsistência entre "150 pontos" e "15 pontos" de doação mínima — a comissão ainda vai confirmar o valor oficial. Preencha normalmente; isso não impede o envio.</div>
-
-        <label class="field-label">Forma de doação</label>
-        <div class="checkbox-row">
-          <input type="radio" name="formaDoacao" id="formaAlimento" value="Alimento">
-          <label for="formaAlimento">Doação de alimentos</label>
-        </div>
-        <div class="checkbox-row">
-          <input type="radio" name="formaDoacao" id="formaPix" value="PIX">
-          <label for="formaPix">PIX</label>
-        </div>
-
-        <div id="donationAlimento" style="display:none">
-          <div class="field" data-field="tipoAlimento">
-            <label class="field-label">Tipo de doação</label>
-            <input type="text" id="tipoAlimento" placeholder="Ex: arroz, óleo, leite...">
-            <div class="error-msg">Informe o tipo de alimento.</div>
-          </div>
-          <div class="field" data-field="quantidade">
-            <label class="field-label">Quantidade</label>
-            <input type="text" id="quantidade" placeholder="Ex: 5 pacotes de 1kg">
-            <div class="error-msg">Informe a quantidade.</div>
-          </div>
-          <div class="field" data-field="pontuacao">
-            <label class="field-label">Pontuação correspondente</label>
-            <input type="number" id="pontuacao" min="0">
-            <div class="error-msg">Informe a pontuação, conforme a tabela do edital.</div>
-            <div class="hint">Use a tabela de conversão do edital para calcular. O formulário não converte automaticamente.</div>
-          </div>
-        </div>
-
-        <div id="donationPix" style="display:none">
-          <p class="hint">Chave PIX: <strong>ma-arco@hotmail.com</strong></p>
-        </div>
-
-        <div class="field" data-field="comprovanteDoacao" id="fieldComprovanteDoacao">
-          <label class="field-label">Comprovante</label>
-          <input type="file" id="comprovanteDoacao" accept=".pdf,.jpg,.jpeg,.png">
-          <div class="error-msg">Anexe o comprovante.</div>
-        </div>
-
+        <h2 class="step-title">Termos de participação</h2>
+        <div id="termsList"></div>
         <div class="nav-row">
           <button class="btn ghost" data-prev>Voltar</button>
           <button class="btn primary" data-next>Continuar</button>
@@ -292,8 +262,9 @@
 
       <!-- ETAPA 6 -->
       <section class="card step" data-step="6" style="display:none">
-        <h2 class="step-title">Termos de participação</h2>
-        <div id="termsList"></div>
+        <h2 class="step-title">Jogadores e Discord</h2>
+        <p class="step-sub">Confirme quem vai jogar cada modalidade escolhida e informe o usuário do Discord de cada jogador (ex: usuario ou usuario#0000).</p>
+        <div id="discordList"></div>
         <div class="nav-row">
           <button class="btn ghost" data-prev>Voltar</button>
           <button class="btn primary" data-next>Continuar</button>
@@ -314,8 +285,7 @@
 
       <!-- SUCESSO -->
       <section class="card success-wrap" data-step="success" style="display:none">
-        <div class="check">✅</div>
-        <h2 class="step-title">Inscrição realizada com sucesso!</h2>
+        <img src="uploads/inscricao-confirmada.png" alt="Inscrição confirmada" class="success-image">
         <div id="successContent" style="text-align:left; margin-top:18px;"></div>
       </section>
 
@@ -391,8 +361,7 @@ const CURSOS = [
 const CURSO_EXTERNO = "Outro curso de graduação da UFSM (participante externo)";
 
 // Contagem de jogadores por modalidade. Truco confirmado em 2 (conforme informado).
-// FIFA não tem quantidade de participantes por equipe definida no edital (só que é individual);
-// por isso não travamos um número fixo — sinalizamos isso na tela e pedimos confirmação manual.
+// FIFA: confirmado 1 jogador por equipe (modalidade individual).
 const MODALIDADES = [
   { nome: "League of Legends", jogadores: 5, tipo: "online" },
   { nome: "Counter-Strike 2", jogadores: 5, tipo: "online" },
@@ -400,7 +369,7 @@ const MODALIDADES = [
   { nome: "Clash Royale", jogadores: 1, tipo: "presencial" },
   { nome: "GeoGuessr", jogadores: 1, tipo: "presencial" },
   { nome: "Truco", jogadores: 2, tipo: "presencial" },
-  { nome: "FIFA", jogadores: null, tipo: "presencial" },
+  { nome: "FIFA", jogadores: 1, tipo: "presencial" },
   { nome: "Xadrez", jogadores: 1, tipo: "presencial" }
 ];
 const MODALIDADES_PRESENCIAIS = MODALIDADES.filter(m => m.tipo === "presencial").map(m => m.nome);
@@ -422,7 +391,7 @@ let state = {
   integrantes: [],
   modalidades: {},   // { "League of Legends": [matricula, ...] }
   reservas: {},      // { "League of Legends": matricula }
-  doacao: { forma:"", tipoAlimento:"", quantidade:"", pontuacao:"", arquivo:null },
+  discordPorIntegrante: {}, // { id_do_integrante: "usuarioDiscord" }
   termos: TERMOS.map(() => false)
 };
 
@@ -456,7 +425,6 @@ function saveDraft(){
     const toSave = JSON.parse(JSON.stringify(state));
     // Não persistimos base64 de arquivos no localStorage (evita estourar limite de espaço)
     toSave.integrantes.forEach(i => { if(i.arquivo) i.arquivo = { nome:i.arquivo.nome, tipoMime:i.arquivo.tipoMime, base64:null, pendente:true }; });
-    if(toSave.doacao.arquivo) toSave.doacao.arquivo = { nome:toSave.doacao.arquivo.nome, tipoMime:toSave.doacao.arquivo.tipoMime, base64:null, pendente:true };
     localStorage.setItem(DRAFT_KEY, JSON.stringify({ state: toSave, step: currentStep }));
   }catch(e){ console.warn("Não foi possível salvar rascunho:", e); }
 }
@@ -511,7 +479,7 @@ async function validateAndReadFile(inputEl, fieldEl){
 // ---------- navegação entre etapas ----------
 const STEP_LABELS = {
   1: "Identificação da equipe", 2: "Integrantes", 3: "Modalidades",
-  4: "Reservas", 5: "Doação", 6: "Termos", 7: "Revisão"
+  4: "Reservas", 5: "Termos", 6: "Jogadores e Discord", 7: "Revisão"
 };
 
 function goToStep(n){
@@ -524,6 +492,7 @@ function goToStep(n){
     $("#progressFill").style.width = (n/7*100) + "%";
     window.scrollTo({top:0, behavior:"smooth"});
   }
+  if(n === 6) renderDiscordStep();
   if(n === 7) renderReview();
   saveDraft();
 }
@@ -533,8 +502,8 @@ function validateStep(n){
   if(n === 2) return validateStep2();
   if(n === 3) return validateStep3();
   if(n === 4) return true; // reservas são opcionais
-  if(n === 5) return validateStep5();
-  if(n === 6) return validateStep6();
+  if(n === 5) return validateStepTermos();
+  if(n === 6) return validateStepDiscord();
   return true;
 }
 
@@ -833,32 +802,7 @@ function renderReserveStep(){
   });
 }
 
-// ---------- ETAPA 5 — doação ----------
-$all('input[name="formaDoacao"]').forEach(r => r.addEventListener("change", () => {
-  state.doacao.forma = r.value;
-  $("#donationAlimento").style.display = r.value === "Alimento" ? "block" : "none";
-  $("#donationPix").style.display = r.value === "PIX" ? "block" : "none";
-}));
-
-function validateStep5(){
-  let ok = true;
-  const forma = $('input[name="formaDoacao"]:checked');
-  if(!forma){ alert("Selecione a forma de doação."); return false; }
-  state.doacao.forma = forma.value;
-  if(forma.value === "Alimento"){
-    ["tipoAlimento","quantidade","pontuacao"].forEach(id => {
-      const input = $("#"+id);
-      const fieldEl = input.closest(".field");
-      const valid = input.value.trim().length > 0;
-      setFieldError(fieldEl, !valid);
-      if(!valid) ok = false;
-      state.doacao[id] = input.value.trim();
-    });
-  }
-  return ok; // comprovante é validado abaixo (async), mantemos ok simples aqui
-}
-
-// ---------- ETAPA 6 — termos ----------
+// ---------- ETAPA 5 — termos ----------
 function renderTerms(){
   const wrap = $("#termsList");
   wrap.innerHTML = "";
@@ -871,10 +815,63 @@ function renderTerms(){
     wrap.appendChild(row);
   });
 }
-function validateStep6(){
+function validateStepTermos(){
   const allChecked = state.termos.every(Boolean);
   if(!allChecked) alert("É necessário aceitar todos os termos para continuar.");
   return allChecked;
+}
+
+// ---------- ETAPA 6 — jogadores e discord ----------
+function renderDiscordStep(){
+  const wrap = $("#discordList");
+  if(!wrap) return;
+  wrap.innerHTML = "";
+  const modalidadesComJogadores = MODALIDADES.filter(mod => (state.modalidades[mod.nome] || []).length > 0);
+  if(!modalidadesComJogadores.length){
+    wrap.innerHTML = '<p class="hint">Nenhuma modalidade com jogadores selecionados ainda. Volte à etapa de Modalidades.</p>';
+    return;
+  }
+  modalidadesComJogadores.forEach(mod => {
+    const ids = state.modalidades[mod.nome] || [];
+    const section = document.createElement("div");
+    section.className = "summary-block";
+    section.innerHTML = `<h3>${escapeHtml(mod.nome)}</h3>`;
+    ids.forEach(id => {
+      const m = state.integrantes.find(x => x.id === id);
+      if(!m) return;
+      const row = document.createElement("div");
+      row.className = "field";
+      row.dataset.field = `discord_${id}`;
+      row.innerHTML = `
+        <label class="field-label">${escapeHtml(m.nome)} — usuário do Discord</label>
+        <input type="text" data-discord-id="${id}" placeholder="ex: usuario ou usuario#0000" value="${escapeHtml(state.discordPorIntegrante[id] || "")}">
+        <div class="error-msg">Informe o usuário do Discord de ${escapeHtml(m.nome)}.</div>
+      `;
+      section.appendChild(row);
+    });
+    wrap.appendChild(section);
+  });
+  $all("[data-discord-id]", wrap).forEach(input => {
+    input.addEventListener("input", (e) => {
+      state.discordPorIntegrante[e.target.dataset.discordId] = e.target.value;
+    });
+  });
+}
+
+function validateStepDiscord(){
+  let ok = true;
+  const ids = new Set();
+  MODALIDADES.forEach(mod => (state.modalidades[mod.nome] || []).forEach(id => ids.add(id)));
+  ids.forEach(id => {
+    const value = (state.discordPorIntegrante[id] || "").trim();
+    const fieldEl = $(`[data-field="discord_${id}"]`);
+    const valid = value.length > 0;
+    if(fieldEl) setFieldError(fieldEl, !valid);
+    state.discordPorIntegrante[id] = value;
+    if(!valid) ok = false;
+  });
+  if(!ok) alert("Informe o usuário do Discord de todos os jogadores escalados.");
+  return ok;
 }
 
 // ---------- ETAPA 7 — revisão ----------
@@ -910,12 +907,15 @@ function renderReview(){
       ${reservasResumo.length ? reservasResumo.map(r => `<div class="row"><span>${escapeHtml(r)}</span></div>`).join("") : '<p class="hint">Nenhum reserva cadastrado.</p>'}
     </div>
     <div class="summary-block">
-      <h3>Doação</h3>
-      <div class="row"><span>Forma</span><span>${escapeHtml(state.doacao.forma || "-")}</span></div>
-      ${state.doacao.forma === "Alimento" ? `
-        <div class="row"><span>Tipo</span><span>${escapeHtml(state.doacao.tipoAlimento||"")}</span></div>
-        <div class="row"><span>Quantidade</span><span>${escapeHtml(state.doacao.quantidade||"")}</span></div>
-        <div class="row"><span>Pontuação</span><span>${escapeHtml(state.doacao.pontuacao||"")}</span></div>` : ""}
+      <h3>Jogadores e Discord</h3>
+      ${modalidadesResumo.length ? modalidadesResumo.map(mod => {
+        const ids = state.modalidades[mod.nome] || [];
+        return ids.map(id => {
+          const m = state.integrantes.find(x => x.id === id);
+          if(!m) return "";
+          return `<div class="row"><span>${escapeHtml(mod.nome)} · ${escapeHtml(m.nome)}</span><span>${escapeHtml(state.discordPorIntegrante[id] || "-")}</span></div>`;
+        }).join("");
+      }).join("") : '<p class="hint">Nenhum jogador escalado.</p>'}
     </div>
   `;
 }
@@ -925,19 +925,6 @@ $("#submitBtn").addEventListener("click", async () => {
   const btn = $("#submitBtn");
   const errEl = $("#submitError");
   errEl.style.display = "none";
-
-  // valida comprovante de doação antes de enviar
-  const fileInputDoacao = $("#comprovanteDoacao");
-  const fieldDoacao = $("#fieldComprovanteDoacao");
-  if(fileInputDoacao.files[0] || !state.doacao.arquivo){
-    const result = await validateAndReadFile(fileInputDoacao, fieldDoacao);
-    if(result && typeof result === "object"){ state.doacao.arquivo = result; }
-    else if(!state.doacao.arquivo){
-      errEl.style.display = "block";
-      errEl.textContent = "Anexe o comprovante da doação antes de finalizar (volte à etapa 5).";
-      return;
-    }
-  }
 
   if(API_URL.indexOf("COLE_AQUI") > -1){
     errEl.style.display = "block";
@@ -958,11 +945,10 @@ $("#submitBtn").addEventListener("click", async () => {
       mod, ids.map(id => { const m = state.integrantes.find(x=>x.id===id); return { nome: m.nome, matricula: m.matricula }; })
     ])),
     reservas: Object.entries(state.reservas).map(([mod, id]) => { const m = state.integrantes.find(x=>x.id===id); return { modalidade: mod, nome: m.nome, matricula: m.matricula }; }),
-    doacao: {
-      forma: state.doacao.forma, tipoAlimento: state.doacao.tipoAlimento,
-      quantidade: state.doacao.quantidade, pontuacao: state.doacao.pontuacao,
-      arquivo: state.doacao.arquivo
-    }
+    discord: Object.entries(state.discordPorIntegrante).filter(([,v]) => v).map(([id, usuario]) => {
+      const m = state.integrantes.find(x => x.id === id);
+      return { nome: m ? m.nome : "", matricula: m ? m.matricula : "", usuarioDiscord: usuario };
+    })
   };
 
   try{
@@ -988,7 +974,7 @@ $("#submitBtn").addEventListener("click", async () => {
 
 function showSuccess(data){
   $all(".step").forEach(el => el.style.display = "none");
-  $('.step[data-step="success"]').style.display = "block";
+  $('[data-step="success"]').style.display = "block";
   $("#progressFill").style.width = "100%";
   $("#progressLabel").textContent = "Inscrição concluída";
   const modalidades = Object.keys(state.modalidades).filter(m => (state.modalidades[m]||[]).length);
@@ -1017,9 +1003,6 @@ async function checkTeamLimit(){
       $("#step-wizard").style.display = "none";
       $("#step-locked").style.display = "block";
     }
-    if(data.ok && data.pontosMinimosDoacao){
-      $("#donationTarget").innerHTML = `Meta de referência: <strong>${data.pontosMinimosDoacao} pontos</strong> por equipe.`;
-    }
   }catch(e){ console.warn("Não foi possível checar o limite de equipes:", e); }
 }
 
@@ -1033,14 +1016,6 @@ function init(){
   $("#responsavelEmail").value = state.equipe.responsavelEmail || "";
   $("#responsavelWhatsapp").value = state.equipe.responsavelWhatsapp || "";
   $("#responsavelMatricula").value = state.equipe.responsavelMatricula || "";
-  const formaAtual = state.doacao.forma;
-  if(formaAtual){
-    const radio = document.getElementById(formaAtual === "Alimento" ? "formaAlimento" : "formaPix");
-    if(radio){ radio.checked = true; radio.dispatchEvent(new Event("change")); }
-  }
-  $("#tipoAlimento").value = state.doacao.tipoAlimento || "";
-  $("#quantidade").value = state.doacao.quantidade || "";
-  $("#pontuacao").value = state.doacao.pontuacao || "";
   renderMembers();
   renderTerms();
   goToStep(currentStep);
