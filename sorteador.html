@@ -315,40 +315,36 @@ var FMT = {
 var FMT_KEYS = ['bo1','bo3','bo5','bo7','bo9','bo13','chess','free','freeK'];
 
 var MODALITIES = [
-  { key:'lol', label:'League of Legends', color:'var(--c-lol)', type:'swiss2',
-    fmts:{round:'bo1', sf:'bo3', final:'bo5', third:'bo3'},
-    note:'Sistema suíço 5×5 com corte em 2 vitórias / 2 derrotas. Cada rodada emparelha apenas equipes de mesma campanha (2-0 com 2-0, 1-1 com 1-1) e evita revanches. Fechados os 4 classificados, a semifinal cruza os 2-0 com os 2-1. Ao gerar uma nova rodada, as anteriores são travadas.' },
-
-  { key:'cs2', label:'Counter-Strike 2', color:'var(--c-cs2)', type:'swiss2',
-    fmts:{round:'bo1', sf:'bo3', final:'bo5', third:'bo3'},
-    note:'Sistema suíço 5×5 com corte em 2 vitórias / 2 derrotas, emparelhamento por campanha e sem revanche. Os 4 classificados vão para semifinal cruzada (2-0 × 2-1), final e disputa de 3º lugar.' },
-
-  { key:'valorant', label:'Valorant 2v2', color:'var(--c-val)', type:'ko', needPow2:true,
-    fmts:{r0:'bo9', r1:'bo9', r2:'bo9', third:'bo9'},
-    note:'Mata-mata simples. O sorteio define a posição (seed) de cada dupla e as quartas seguem o cruzamento oficial 1×8, 4×5, 2×7, 3×6. Cada confronto é MD1 de mapa, decidido em MD9 de rounds — ou seja, vence quem chegar a 5 rounds. Basta lançar o placar de rounds; o vencedor avança sozinho na chave.' },
-
+  { key:'lol', label:'League of Legends', color:'var(--c-lol)', type:'custom5',
+    fmts:{round:'bo1', sf:'bo1', final:'bo3'},
+    note:'Chave personalizada para cinco equipes. J1: B × C; J2: D × E; A entra no J3. J3: A × vencedor do J1; J4: perdedores dos J1 e J2; J5: vencedor do J2 × vencedor do J3; J6: vencedor do J4 × perdedor do J3; semifinal: perdedor do J5 × vencedor do J6; final: vencedor do J5 × vencedor da semifinal. Semifinal MD1, final MD3 e todos os outros jogos MD1.' },
+  { key:'cs2', label:'Counter-Strike 2', color:'var(--c-cs2)', type:'double4',
+    fmts:{round:'bo1', final:'bo3'},
+    note:'Quatro equipes sorteadas em duas partidas iniciais. Os vencedores disputam a final do upper; os perdedores jogam a primeira do lower; o vencedor segue para enfrentar o perdedor do upper na final do lower. O vencedor do upper e o vencedor do lower disputam a grande final MD3. Todos os outros jogos são MD1. Discípulos de Lilith não participa do CS.' },
+  { key:'valorant', label:'Valorant 2v2', color:'var(--c-val)', type:'rr',
+    fmts:{round:'bo9', final:'bo9'},
+    note:'Todos contra todos. Cada confronto é MD1 de mapa, decidido em MD9 de rounds (vence quem chegar a 5 rounds). Os dois primeiros disputam a final. Desempate por pontos/vitórias e confronto direto; se ainda houver empate, a classificação fica pendente para decisão da comissão.' },
   { key:'clash', label:'Clash Royale', color:'var(--c-clash)', type:'rr',
     fmts:{round:'bo3', final:'bo5'},
-    note:'Todos contra todos em séries MD3 — não existe empate, cada série tem um vencedor. Cada série vencida vale 1 ponto; as duas melhores campanhas disputam a final em MD5. Empate em pontos é resolvido por confronto direto.' },
-
-  { key:'geo', label:'Geoguessr', color:'var(--c-geo)', type:'groups', drawInGroups:false,
-    fmts:{round:'bo1', sf:'bo1', final:'bo1', third:'bo1'},
-    note:'Fase de grupos (A e B) em formato todos-contra-todos, duelo 1v1 por barra de vida — não existe empate, basta marcar quem venceu. Os dois primeiros de cada grupo cruzam na semifinal (1ºA × 2ºB e 1ºB × 2ºA), com final e disputa de 3º lugar.' },
-
-  { key:'fifa', label:'FIFA', color:'var(--c-fifa)', type:'groups', drawInGroups:true,
-    fmts:{round:'free', sf:'free', final:'free', third:'free'},
-    note:'Fase de grupos (A e B) todos-contra-todos, com placar de gols: vitória 3 pontos, empate 1, derrota 0, e saldo de gols como primeiro critério de desempate. Os dois primeiros de cada grupo cruzam na semifinal, com final e disputa de 3º lugar — no mata-mata, empate no tempo normal é decidido nos pênaltis.' },
-
+    note:'Todos contra todos em séries MD3. Cada série vencida vale 1 ponto; os dois primeiros disputam a final MD5. Empate em pontos é resolvido por confronto direto; persistindo empate, aplicar critério da comissão.' },
+  { key:'geo', label:'Geoguessr', color:'var(--c-geo)', type:'rr',
+    fmts:{round:'bo1', final:'bo1'},
+    note:'Todos contra todos em duelos 1v1; não existe empate, basta registrar quem venceu. Os dois primeiros da classificação disputam a final. Desempate por confronto direto; se persistir, decisão da comissão.' },
+  { key:'fifa', label:'FIFA', color:'var(--c-fifa)', type:'rr', drawInGroups:true,
+    fmts:{round:'free', final:'freeK'},
+    note:'Todos contra todos com placar de gols: vitória 3 pontos, empate 1, derrota 0; desempate por saldo de gols, gols marcados e confronto direto. Os dois primeiros disputam a final; empate na final pode ser registrado conforme o critério definido pela comissão.' },
   { key:'chess', label:'Xadrez', color:'var(--c-chess)', type:'swissN', maxRounds:3,
     fmts:{round:'chess'},
     note:'Sistema suíço de 3 rodadas. O sorteio define o emparelhamento e as cores de cada rodada. Vitória vale 1 ponto e empate ½ ponto. Ao gerar a rodada seguinte, os resultados anteriores ficam travados.' },
-
-  { key:'truco', label:'Truco', color:'var(--c-truco)', type:'rrplain',
-    fmts:{round:'bo3'},
-    note:'O regulamento detalha apenas as regras do jogo, sem definir formato de chave. Esta tabela é uma sugestão de todos-contra-todos em séries MD3 — ajuste conforme decisão da comissão.' }
+  { key:'truco', label:'Truco', color:'var(--c-truco)', type:'rr',
+    fmts:{round:'bo3', final:'bo3'},
+    note:'Todos contra todos em séries MD3. Cada confronto tem um vencedor; os dois primeiros disputam a final MD3. Empate na classificação é resolvido por confronto direto; persistindo, decisão da comissão.' }
 ];
 
 var DEFAULT_PTS = [250,180,150,120,100,80,60,40];
+
+var FIXED_TEAMS = ['Black Sheep SXG Esports','Zeros e Uma','pqfundao','PET_SI','Discípulos de Lilith'];
+var CS_TEAMS = ['Black Sheep SXG Esports','Zeros e Uma','pqfundao','PET_SI'];
 
 /* ============================ HELPERS ============================ */
 
@@ -477,7 +473,31 @@ function runDraw(key){
   if(teams.length<2) return;
   var d=null, sh, i;
 
-  if(m.type==='swiss2'){
+  if(m.type==='custom5'){
+    if(teams.length!==5){ state.draws[key]={type:'error',message:'League of Legends precisa das cinco equipes fixas.'}; render(); return; }
+    sh=shuffle(teams);
+    var slots={A:sh[0],B:sh[1],C:sh[2],D:sh[3],E:sh[4]};
+    d={type:'custom5', fmts:clone(m.fmts), slots:slots, rounds:[
+      [mk(key+'-g1',slots.B,slots.C,'round',{nd:true}), mk(key+'-g2',slots.D,slots.E,'round',{nd:true})],
+      [mk(key+'-g3',slots.A,null,'round',{nd:true}), mk(key+'-g4',null,null,'round',{nd:true})],
+      [mk(key+'-g5',null,null,'round',{nd:true}), mk(key+'-g6',null,null,'round',{nd:true})],
+      [mk(key+'-g7',null,null,'sf',{nd:true})],
+      [mk(key+'-gf',null,null,'final',{nd:true})]
+    ]};
+  }
+
+  else if(m.type==='double4'){
+    var csPool=shuffle(teams.filter(function(t){return CS_TEAMS.indexOf(t)>=0;}));
+    if(csPool.length!==4){ state.draws[key]={type:'error',message:'O CS precisa das quatro equipes elegíveis: Black Sheep SXG Esports, Zeros e Uma, pqfundao e PET_SI.'}; render(); return; }
+    d={type:'double4', fmts:clone(m.fmts), fixedTeams:csPool, rounds:[
+      [mk(key+'-g1',csPool[0],csPool[1],'round',{nd:true}),mk(key+'-g2',csPool[2],csPool[3],'round',{nd:true})],
+      [mk(key+'-upper-final',null,null,'round',{nd:true}),mk(key+'-lower-r1',null,null,'round',{nd:true})],
+      [mk(key+'-lower-final',null,null,'round',{nd:true})],
+      [mk(key+'-grand-final',null,null,'final',{nd:true})]
+    ]};
+  }
+
+  else if(m.type==='swiss2'){
     sh=shuffle(teams);
     var pairs=pairAdjacent(sh);
     d={type:'swiss2', fmts:clone(m.fmts), rounds:[ pairs.map(function(p,i){
@@ -529,8 +549,8 @@ function runDraw(key){
 
   else if(m.type==='rr'){
     sh=shuffle(teams);
-    d={type:'rr', fmts:clone(m.fmts),
-       rounds: roundRobin(sh).map(function(r,ri){ return r.map(function(p,mi){ return mk(key+'-r'+ri+'-m'+mi,p[0],p[1],'round',{nd:true}); }); }),
+    d={type:'rr', fmts:clone(m.fmts), drawInGroups:!!m.drawInGroups,
+       rounds: roundRobin(sh).map(function(r,ri){ return r.map(function(p,mi){ return mk(key+'-r'+ri+'-m'+mi,p[0],p[1],'round',{nd:!m.drawInGroups}); }); }),
        final: mk(key+'-final',null,null,'final',{nd:true}), tied:null};
   }
 
@@ -673,7 +693,7 @@ function standings(teams, rounds, opts){
     else { A.e++; B.e++; A.pts+=1; B.pts+=1; }
   }); });
   var rows=Object.keys(t).map(function(k){ var r=t[k]; r.sg=r.gp-r.gc; return r; });
-  rows.sort(function(x,y){ return y.pts-x.pts || y.v-x.v || y.sg-x.sg || y.gp-x.gp || x.team.localeCompare(y.team); });
+  rows.sort(function(x,y){ return y.pts-x.pts || (opts.goals ? (y.sg-x.sg || y.gp-x.gp || y.v-x.v) : (y.v-x.v || y.sg-x.sg || y.gp-x.gp)) || x.team.localeCompare(y.team); });
   return rows;
 }
 
@@ -767,12 +787,33 @@ function recompute(key){
     }
   }
 
+  else if(d.type==='custom5'){
+    var cr=d.rounds||[], slots=d.slots||{};
+    var g1=cr[0]&&cr[0][0], g2=cr[0]&&cr[0][1], g3=cr[1]&&cr[1][0], g4=cr[1]&&cr[1][1], g5=cr[2]&&cr[2][0], g6=cr[2]&&cr[2][1], g7=cr[3]&&cr[3][0], gf=cr[4]&&cr[4][0];
+    setSlots(g1,slots.B,slots.C); setSlots(g2,slots.D,slots.E);
+    setSlots(g3,slots.A,decided(g1)?winnerOf(g1):null);
+    setSlots(g4,decided(g1)?loserOf(g1):null,decided(g2)?loserOf(g2):null);
+    setSlots(g5,decided(g2)?winnerOf(g2):null,decided(g3)?winnerOf(g3):null);
+    setSlots(g6,decided(g4)?winnerOf(g4):null,decided(g3)?loserOf(g3):null);
+    setSlots(g7,decided(g5)?loserOf(g5):null,decided(g6)?winnerOf(g6):null);
+    setSlots(gf,decided(g5)?winnerOf(g5):null,decided(g7)?winnerOf(g7):null);
+  }
+
+  else if(d.type==='double4'){
+    var dr=d.rounds||[], uf=dr[1]&&dr[1][0], lr=dr[1]&&dr[1][1], lf=dr[2]&&dr[2][0], gf2=dr[3]&&dr[3][0];
+    var firstA=dr[0]&&dr[0][0], firstB=dr[0]&&dr[0][1];
+    setSlots(uf,decided(firstA)?winnerOf(firstA):null,decided(firstB)?winnerOf(firstB):null);
+    setSlots(lr,decided(firstA)?loserOf(firstA):null,decided(firstB)?loserOf(firstB):null);
+    setSlots(lf,decided(uf)?loserOf(uf):null,decided(lr)?winnerOf(lr):null);
+    setSlots(gf2,decided(uf)?winnerOf(uf):null,decided(lf)?winnerOf(lf):null);
+  }
+
   else if(d.type==='rr'){
     var teamsR = rrTeams(d.rounds);
     var done = d.rounds.every(function(rr){ return rr.every(function(m){ return !m.a||!m.b||decided(m); }); });
     var a=null,b=null; d.tied=null;
     if(done){
-      var res=resolveTop2(teamsR,d.rounds);
+      var res=resolveTop2(teamsR,d.rounds,!!d.drawInGroups);
       if(res.top){ a=res.top[0]; b=res.top[1]; } else d.tied=res.tied;
     }
     setSlots(d.final,a,b);
@@ -785,15 +826,17 @@ function rrTeams(rounds){
   return l;
 }
 
-function resolveTop2(teams, rounds){
-  var rows=standings(teams,rounds,{});
+function resolveTop2(teams, rounds, goals){
+  var rows=standings(teams,rounds,{goals:!!goals});
   var order=[], i=0;
+  function tieKey(r){ return goals ? [r.pts,r.sg,r.gp].join('|') : String(r.pts); }
   while(i<rows.length && order.length<2){
-    var pts=rows[i].pts;
-    var group=rows.filter(function(r){return r.pts===pts;}).map(function(r){return r.team;});
+    var key=tieKey(rows[i]);
+    var groupRows=rows.filter(function(r){return tieKey(r)===key;});
+    var group=groupRows.map(function(r){return r.team;});
     if(group.length===1){ order.push(group[0]); i++; continue; }
     var h=headToHead(group,rounds);
-    var sorted=group.slice().sort(function(a,b){ return h[b]-h[a]; });
+    var sorted=group.slice().sort(function(a,b){ return h[b]-h[a] || a.localeCompare(b); });
     var need=2-order.length;
     if(sorted.length>need && h[sorted[need-1]]===h[sorted[need]]) return {tied:group};
     sorted.slice(0,need).forEach(function(t){ order.push(t); });
@@ -857,6 +900,19 @@ function placement(key){
 
   var groups=[], placed={}, push=function(arr){ if(arr&&arr.length){ groups.push(arr); arr.forEach(function(t){ placed[t]=1; }); } };
 
+  if(d.type==='custom5'){
+    var crp=d.rounds||[], g4p=crp[1]&&crp[1][1], g6p=crp[2]&&crp[2][1], semp=crp[3]&&crp[3][0], gfp=crp[4]&&crp[4][0];
+    if(!g4p||!g6p||!semp||!gfp||!decided(g4p)||!decided(g6p)||!decided(semp)||!decided(gfp)) return {ready:false,why:'Aguardando os resultados da chave personalizada.',groups:[]};
+    push([winnerOf(gfp)]); push([loserOf(gfp)]); push([loserOf(semp)]); push([loserOf(g6p)]); push([loserOf(g4p)]);
+    return {ready:true,groups:toPositions(groups)};
+  }
+  if(d.type==='double4'){
+    var drp=d.rounds||[], lrp=drp[1]&&drp[1][1], lfp=drp[2]&&drp[2][0], gff=drp[3]&&drp[3][0];
+    if(!lrp||!lfp||!gff||!decided(lrp)||!decided(lfp)||!decided(gff)) return {ready:false,why:'Aguardando a final do upper/lower e a grande final.',groups:[]};
+    push([winnerOf(gff)]); push([loserOf(gff)]); push([loserOf(lfp)]); push([loserOf(lrp)]);
+    return {ready:true,groups:toPositions(groups)};
+  }
+
   if(d.type==='swiss2'){
     if(!d.sf || !decided(d.final) || !decided(d.third)) return {ready:false, why:'Aguardando final e disputa de 3º lugar.', groups:[]};
     push([winnerOf(d.final)]); push([loserOf(d.final)]);
@@ -896,7 +952,7 @@ function placement(key){
   if(d.type==='rr'){
     if(!decided(d.final)) return {ready:false, why:'Aguardando a final.', groups:[]};
     push([winnerOf(d.final)]); push([loserOf(d.final)]);
-    var rowsR=standings(rrTeams(d.rounds),d.rounds,{}).filter(function(r){ return !placed[r.team]; });
+    var rowsR=standings(rrTeams(d.rounds),d.rounds,{goals:!!d.drawInGroups}).filter(function(r){ return !placed[r.team]; });
     tieGroups(rowsR,function(r){ return String(r.pts); }).forEach(push);
     return {ready:true, groups:toPositions(groups), note:'Do 3º em diante vale a campanha do todos-contra-todos; equipes com os mesmos pontos dividem a posição.'};
   }
@@ -1072,6 +1128,26 @@ function renderModality(m){
   d.__key=m.key;
   var locks=lockSet(m.key);
   var C=m.color;
+
+  if(d.type==='custom5'){
+    var cr=d.rounds||[], slotOrder=['A','B','C','D','E'];
+    html += stageBlock('Posições sorteadas','<div class="tbl-wrap"><table><thead><tr><th>Posição</th><th>Equipe</th></tr></thead><tbody>'+slotOrder.map(function(s){return '<tr><td><b>'+s+'</b></td><td>'+esc(d.slots&&d.slots[s]||'A definir')+'</td></tr>';}).join('')+'</tbody></table></div>');
+    html += stageBlock('Rodada de abertura',matchList(cr[0]||[],d,C,locks));
+    html += stageBlock('Upper bracket',matchList([cr[1]&&cr[1][0],cr[2]&&cr[2][0]].filter(Boolean),d,C,locks));
+    html += stageBlock('Lower bracket',matchList([cr[1]&&cr[1][1],cr[2]&&cr[2][1]].filter(Boolean),d,C,locks));
+    html += stageBlock('Semifinal — MD1',matchList(cr[3]||[],d,C,locks));
+    html += stageBlock('Grande final — MD3',matchList(cr[4]||[],d,C,locks));
+    return html + placementBlock(m);
+  }
+
+  if(d.type==='double4'){
+    var dr=d.rounds||[];
+    html += stageBlock('Sorteio da primeira rodada',matchList(dr[0]||[],d,C,locks));
+    html += stageBlock('Upper bracket — final',matchList([dr[1]&&dr[1][0]].filter(Boolean),d,C,locks));
+    html += stageBlock('Lower bracket',matchList([dr[1]&&dr[1][1],dr[2]&&dr[2][0]].filter(Boolean),d,C,locks));
+    html += stageBlock('Grande final — MD3',matchList(dr[3]||[],d,C,locks));
+    return html + placementBlock(m);
+  }
 
   if(d.type==='swiss2'){
     var rec=records(state.teams,d.rounds);
@@ -1417,9 +1493,9 @@ document.getElementById('confirmBtn').addEventListener('click', function(){
 
 document.getElementById('resetBtn').addEventListener('click', function(){
   if(!confirm('Isso apaga as equipes, todos os sorteios e todos os resultados salvos. Continuar?')) return;
-  state.teams=[]; state.draws={}; state.idx={}; state.config={pts:DEFAULT_PTS.slice()};
-  teamsInput.value='';
-  persist('teams',[]); persist('config',state.config);
+  state.teams=FIXED_TEAMS.slice(); state.draws={}; state.idx={}; state.config={pts:DEFAULT_PTS.slice()};
+  teamsInput.value=state.teams.join('\n');
+  persist('teams',state.teams); persist('config',state.config);
   MODALITIES.forEach(function(m){ persist(m.key, null); lsDel(m.key); });
   renderTeams(); render();
 });
@@ -1428,8 +1504,8 @@ function renderTeams(){
   var n=state.teams.length;
   if(n===0){ teamsStatus.textContent='Nenhuma equipe confirmada ainda.'; teamsStatus.className='status'; }
   else if(n<2){ teamsStatus.textContent='É preciso pelo menos 2 equipes.'; teamsStatus.className='status warn'; }
-  else if(n===8){ teamsStatus.textContent='8 equipes confirmadas.'; teamsStatus.className='status ok'; }
-  else { teamsStatus.textContent=n+' equipes confirmadas (o regulamento prevê 8; a chave do Valorant exige potência de 2).'; teamsStatus.className='status warn'; }
+  else if(n===5){ teamsStatus.textContent='Cinco equipes fixas confirmadas; o CS usa as quatro elegíveis.'; teamsStatus.className='status ok'; }
+  else { teamsStatus.textContent=n+' equipes confirmadas.'; teamsStatus.className='status warn'; }
   teamsChips.innerHTML=state.teams.map(function(t,i){
     return '<span class="chip"><span class="n">'+(i+1)+'</span><b>'+esc(t)+'</b></span>'; }).join('');
 }
@@ -1561,15 +1637,27 @@ function copyGeral(btn){
 
 /* ============================ INIT ============================ */
 
+function sameTeams(a,b){ return Array.isArray(a) && a.length===b.length && a.every(function(t,i){return t===b[i];}); }
 function loadLocal(){
-  var t=lsGet('teams'); if(Array.isArray(t)) state.teams=t;
+  var t=lsGet('teams');
+  var matchesFixed=sameTeams(t,FIXED_TEAMS);
+  var versioned=lsGet('fixed-teams-v1')===true;
+  state.teams=FIXED_TEAMS.slice();
   var c=lsGet('config'); if(c && Array.isArray(c.pts)) state.config=c;
-  MODALITIES.forEach(function(m){ var d=lsGet(m.key); if(d) state.draws[m.key]=d; });
+  if(matchesFixed && versioned){
+    MODALITIES.forEach(function(m){ var d=lsGet(m.key); if(d && d.type===m.type) state.draws[m.key]=d; else { lsDel(m.key); } });
+  } else {
+    MODALITIES.forEach(function(m){ lsDel(m.key); persist(m.key,null); });
+    persist('teams',state.teams);
+  }
+  lsSet('fixed-teams-v1',true);
   indexAll();
 }
 
 loadLocal();
 teamsInput.value=state.teams.join('\n');
+teamsInput.readOnly=true;
+document.getElementById('confirmBtn').disabled=true;
 renderTeams();
 applyMode();
 render();

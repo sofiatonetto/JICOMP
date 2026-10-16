@@ -222,6 +222,55 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .v-dn-l{left:-18px;top:50%}.v-up-l{left:-18px;bottom:50%}
 .third-wrap{max-width:300px;margin:14px auto 0}
 
+/* Chaves especiais de LoL e CS: fluxo visual upper/lower até a final */
+.custom5-diagram{display:grid;gap:18px;margin:18px 0 26px}
+.custom5-initial,.custom5-lane,.custom5-grand-final{background:var(--panel-2);border:2px solid var(--border-soft);border-radius:18px;padding:15px}
+.custom5-section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 12px;font-family:'Sigmar One',cursive;font-size:13px;letter-spacing:.04em;color:var(--text)}
+.custom5-section-title small{font:600 11px 'Work Sans',sans-serif;letter-spacing:0;color:var(--muted)}
+.custom5-initial-grid{display:grid;grid-template-columns:repeat(2,minmax(230px,1fr));gap:12px}
+.custom5-game{min-width:0;width:100%;flex:0 0 238px}
+.custom5-game-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;color:var(--text);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.custom5-game-head .custom5-format{display:inline-flex;align-items:center;border-radius:999px;background:var(--chip);padding:3px 7px;font-size:10px;letter-spacing:0;color:var(--muted)}
+.custom5-game .bk-node{border:2px solid var(--border);box-shadow:0 3px 0 rgba(16,19,10,.12)}
+.custom5-game .bk-cap{display:none}
+.custom5-game .bk-team{min-height:39px;padding:9px 10px;font-size:12.5px}
+.custom5-game-note{margin:7px 2px 0;color:var(--muted);font-size:11px;line-height:1.4}
+.custom5-routes{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.custom5-route-pill{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--border-soft);border-radius:999px;background:var(--panel);padding:5px 9px;color:var(--muted);font-size:10.5px;line-height:1.3}
+.custom5-route-pill strong{color:var(--text)}
+.custom5-lane{min-width:0}
+.custom5-lane.upper{border-color:var(--win-fg)}
+.custom5-lane.lower{border-color:var(--warn-br)}
+.custom5-lane.upper .custom5-section-title{color:var(--win-fg)}
+.custom5-lane.lower .custom5-section-title{color:var(--warn-fg)}
+.custom5-flow-scroll{overflow-x:auto;padding:2px 2px 10px;-webkit-overflow-scrolling:touch}
+.custom5-flow{display:flex;align-items:stretch;gap:9px;min-width:max-content}
+.custom5-arrow{flex:0 0 66px;align-self:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;color:var(--muted);font-size:9.5px;line-height:1.25}
+.custom5-arrow b{font-size:26px;line-height:1;color:var(--faint);font-weight:500}
+.custom5-lane.upper .custom5-arrow b{color:var(--win-fg)}
+.custom5-lane.lower .custom5-arrow b{color:var(--warn-fg)}
+.custom5-destination{flex:0 0 150px;align-self:center;border:2px dashed var(--border-soft);border-radius:13px;padding:13px 10px;text-align:center;background:var(--panel);color:var(--muted);font-size:11px;line-height:1.45}
+.custom5-destination strong{display:block;color:var(--text);font-size:12px;margin-bottom:4px}
+.custom5-final-sources{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;margin:0 0 10px}
+.custom5-final-source{border-radius:999px;padding:7px 12px;background:var(--win-bg);color:var(--win-fg);font-size:11px;font-weight:700}
+.custom5-final-source.lower-source{background:var(--warn-bg);color:var(--warn-fg)}
+.custom5-grand-final{max-width:420px;width:100%;margin:0 auto;border-color:var(--c-lol);background:var(--panel)}
+.custom5-grand-final .custom5-section-title{justify-content:center;font-size:15px;color:var(--text)}
+.custom5-grand-final .custom5-game{width:100%;flex:none}
+.custom5-grand-final .bk-team{min-height:44px;font-size:13px}
+.custom5-flow-label{margin:4px 0 10px;color:var(--muted);font-size:12px;line-height:1.5}
+@media(max-width:640px){
+ .custom5-initial,.custom5-lane,.custom5-grand-final{padding:11px;border-radius:14px}
+ .custom5-initial-grid{grid-template-columns:minmax(220px,1fr)}
+ .custom5-section-title{font-size:12px}
+ .custom5-game{flex-basis:218px}
+ .custom5-arrow{flex-basis:48px}
+ .custom5-destination{flex-basis:130px}
+ .custom5-final-sources{gap:7px}
+ .custom5-final-source{font-size:10px;padding:6px 9px}
+}
+
+
 table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:6px}
 th{text-align:left;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--faint);
   font-weight:600;padding:7px 9px;border-bottom:1px solid var(--border)}
@@ -303,14 +352,14 @@ var FMT = {
 };
 
 var MODALITIES = [
-  { key:'lol', label:'League of Legends', color:'var(--c-lol)', type:'swiss2', fmts:{round:'bo1', sf:'bo3', final:'bo5', third:'bo3'}, note:'Sistema suíço 5×5 com corte em 2 vitórias / 2 derrotas.' },
-  { key:'cs2', label:'Counter-Strike 2', color:'var(--c-cs2)', type:'swiss2', fmts:{round:'bo1', sf:'bo3', final:'bo5', third:'bo3'}, note:'Sistema suíço 5×5 com corte em 2 vitórias / 2 derrotas.' },
-  { key:'valorant', label:'Valorant 2v2', color:'var(--c-val)', type:'ko', needPow2:true, fmts:{r0:'bo9', r1:'bo9', r2:'bo9', third:'bo9'}, note:'Mata-mata simples.' },
-  { key:'clash', label:'Clash Royale', color:'var(--c-clash)', type:'rr', fmts:{round:'bo3', final:'bo5'}, note:'Todos contra todos em séries MD3.' },
-  { key:'geo', label:'Geoguessr', color:'var(--c-geo)', type:'groups', drawInGroups:false, fmts:{round:'bo1', sf:'bo1', final:'bo1', third:'bo1'}, note:'Fase de grupos (A e B).' },
-  { key:'fifa', label:'FIFA', color:'var(--c-fifa)', type:'groups', drawInGroups:true, fmts:{round:'free', sf:'free', final:'free', third:'free'}, note:'Fase de grupos (A e B) com placar de gols.' },
+  { key:'lol', label:'League of Legends', color:'var(--c-lol)', type:'custom5', fmts:{round:'bo1', sf:'bo1', final:'bo3'}, note:'Chave personalizada para cinco equipes. J1: B × C; J2: D × E; J3: A × vencedor do J1; J4: perdedores dos J1 e J2; J5: vencedor do J2 × vencedor do J3; J6: vencedor do J4 × perdedor do J3; semifinal: perdedor do J5 × vencedor do J6; final: vencedor do J5 × vencedor da semifinal. Semifinal MD1, final MD3 e todos os outros jogos MD1.' },
+  { key:'cs2', label:'Counter-Strike 2', color:'var(--c-cs2)', type:'double4', fmts:{round:'bo1', final:'bo3'}, note:'Quatro equipes sorteadas em duas partidas iniciais. Os vencedores disputam a final do upper; os perdedores jogam a primeira do lower; o vencedor segue para enfrentar o perdedor do upper na final do lower. O vencedor do upper e o vencedor do lower disputam a grande final MD3. Todos os outros jogos são MD1. Discípulos de Lilith não participa do CS.' },
+  { key:'valorant', label:'Valorant 2v2', color:'var(--c-val)', type:'rr', fmts:{round:'bo9', final:'bo9'}, note:'Todos contra todos em MD1 de mapa, decidido em MD9 de rounds. Os dois primeiros disputam a final; desempate por confronto direto e, persistindo, decisão da comissão.' },
+  { key:'clash', label:'Clash Royale', color:'var(--c-clash)', type:'rr', fmts:{round:'bo3', final:'bo5'}, note:'Todos contra todos em séries MD3; os dois primeiros disputam a final MD5. Desempate por confronto direto; persistindo, critério da comissão.' },
+  { key:'geo', label:'Geoguessr', color:'var(--c-geo)', type:'rr', fmts:{round:'bo1', final:'bo1'}, note:'Todos contra todos em duelos 1v1; os dois primeiros disputam a final. Desempate por confronto direto; persistindo, decisão da comissão.' },
+  { key:'fifa', label:'FIFA', color:'var(--c-fifa)', type:'rr', drawInGroups:true, fmts:{round:'free', final:'freeK'}, note:'Todos contra todos com placar de gols: vitória 3 pontos, empate 1, derrota 0; desempate por saldo de gols, gols marcados e confronto direto. Os dois primeiros disputam a final.' },
   { key:'chess', label:'Xadrez', color:'var(--c-chess)', type:'swissN', maxRounds:3, fmts:{round:'chess'}, note:'Sistema suíço de 3 rodadas.' },
-  { key:'truco', label:'Truco', color:'var(--c-truco)', type:'rrplain', fmts:{round:'bo3'}, note:'Todos-contra-todos em séries MD3.' }
+  { key:'truco', label:'Truco', color:'var(--c-truco)', type:'rr', fmts:{round:'bo3', final:'bo3'}, note:'Todos contra todos em séries MD3; os dois primeiros disputam a final. Desempate por confronto direto; persistindo, decisão da comissão.' }
 ];
 
 var DEFAULT_PTS = [250,180,150,120,100,80,60,40];
@@ -386,7 +435,7 @@ function standings(teams, rounds, opts){
     else { A.e++; B.e++; A.pts+=1; B.pts+=1; }
   }); });
   var rows=Object.keys(t).map(function(k){ var r=t[k]; r.sg=r.gp-r.gc; return r; });
-  rows.sort(function(x,y){ return y.pts-x.pts || y.v-x.v || y.sg-x.sg || y.gp-x.gp || x.team.localeCompare(y.team); });
+  rows.sort(function(x,y){ return y.pts-x.pts || (opts.goals ? (y.sg-x.sg || y.gp-x.gp || y.v-x.v) : (y.v-x.v || y.sg-x.sg || y.gp-x.gp)) || x.team.localeCompare(y.team); });
   return rows;
 }
 
@@ -423,6 +472,22 @@ function placement(key){
   if(!d || d.type==='error') return {ready:false, why:'Sorteio ainda não gerado.', groups:[]};
 
   var groups=[], placed={}, push=function(arr){ if(arr&&arr.length){ groups.push(arr); arr.forEach(function(t){ placed[t]=1; }); } };
+
+  if(d.type==='double4'){
+    var rr=d.rounds||[], uf=rr[1]&&rr[1][0], lr=rr[1]&&rr[1][1], lf=rr[2]&&rr[2][0], gf=rr[3]&&rr[3][0];
+    if(!uf || !lf || !gf || !decided(uf) || !decided(lf) || !decided(gf))
+      return {ready:false, why:'Aguardando a final do upper, a final do lower e a grande final.', groups:[]};
+    push([winnerOf(gf)]); push([loserOf(gf)]); push([loserOf(lf)]); push([loserOf(lr)]);
+    return {ready:true, groups:toPositions(groups)};
+  }
+
+  if(d.type==='custom5'){
+    var r5=d.rounds||[], g4=r5[1]&&r5[1][1], g6=r5[2]&&r5[2][1], semi=r5[3]&&r5[3][0], final5=r5[4]&&r5[4][0];
+    if(!g4 || !g6 || !semi || !final5 || !decided(g4) || !decided(g6) || !decided(semi) || !decided(final5))
+      return {ready:false, why:'Aguardando a final e os resultados que definem as posições de 3º a 5º.', groups:[]};
+    push([winnerOf(final5)]); push([loserOf(final5)]); push([loserOf(semi)]); push([loserOf(g6)]); push([loserOf(g4)]);
+    return {ready:true, groups:toPositions(groups)};
+  }
 
   if(d.type==='swiss2'){
     if(!d.sf || !decided(d.final) || !decided(d.third)) return {ready:false, why:'Aguardando final e disputa de 3º lugar.', groups:[]};
@@ -463,8 +528,8 @@ function placement(key){
   if(d.type==='rr'){
     if(!decided(d.final)) return {ready:false, why:'Aguardando a final.', groups:[]};
     push([winnerOf(d.final)]); push([loserOf(d.final)]);
-    var rowsR=standings(rrTeams(d.rounds),d.rounds,{}).filter(function(r){ return !placed[r.team]; });
-    tieGroups(rowsR,function(r){ return String(r.pts); }).forEach(push);
+    var rowsR=standings(rrTeams(d.rounds),d.rounds,{goals:!!d.drawInGroups}).filter(function(r){ return !placed[r.team]; });
+    tieGroups(rowsR,function(r){ return d.drawInGroups ? [r.pts,r.sg,r.gp].join('|') : String(r.pts); }).forEach(push);
     return {ready:true, groups:toPositions(groups)};
   }
 
@@ -620,6 +685,72 @@ function tableStandings(teams, rounds, opts){
   return '<div class="tbl-wrap"><table><thead>'+th+'</thead><tbody>'+body+'</tbody></table></div>';
 }
 
+
+function custom5GameCard(match, gameNumber, detail, d, color, formatLabel){
+  if(!match) return '<div class="custom5-game"><div class="custom5-game-head"><span>Jogo '+gameNumber+'</span><span class="custom5-format">'+esc(formatLabel||'MD1')+'</span></div><div class="bk-node"><div class="bk-team tbd"><span class="nm">A definir</span></div><div class="bk-team tbd"><span class="nm">A definir</span></div></div><p class="custom5-game-note">'+esc(detail||'')+'</p></div>';
+  return '<div class="custom5-game"><div class="custom5-game-head"><span>'+esc(gameNumber)+'</span><span class="custom5-format">'+esc(formatLabel||'MD1')+'</span></div>'+bkNode(match,d,color,'')+'<p class="custom5-game-note">'+esc(detail||'')+'</p></div>';
+}
+function custom5Arrow(label){
+  return '<div class="custom5-arrow"><span>'+esc(label)+'</span><b aria-hidden="true">→</b></div>';
+}
+function custom5Diagram(rounds, d, color){
+  var g1=rounds[0]&&rounds[0][0], g2=rounds[0]&&rounds[0][1];
+  var g3=rounds[1]&&rounds[1][0], g4=rounds[1]&&rounds[1][1];
+  var g5=rounds[2]&&rounds[2][0], g6=rounds[2]&&rounds[2][1];
+  var g7=rounds[3]&&rounds[3][0], gf=rounds[4]&&rounds[4][0];
+  var html='<div class="custom5-diagram">';
+  html+='<section class="custom5-initial"><h3 class="custom5-section-title"><span>Rodada de abertura</span><small>Definem os caminhos do upper e do lower</small></h3>';
+  html+='<div class="custom5-initial-grid">';
+  html+=custom5GameCard(g1,'JOGO 1 · B × C','Vencedor → Jogo 3 · Perdedor → Jogo 4',d,color,'MD1');
+  html+=custom5GameCard(g2,'JOGO 2 · D × E','Vencedor → Jogo 5 · Perdedor → Jogo 4',d,color,'MD1');
+  html+='</div><div class="custom5-routes"><span class="custom5-route-pill"><strong>A</strong> entra diretamente no Jogo 3</span><span class="custom5-route-pill">Os perdedores dos Jogos 1 e 2 se enfrentam no Jogo 4</span></div></section>';
+  html+='<section class="custom5-lane upper"><h3 class="custom5-section-title"><span>UPPER BRACKET · caminho dos vencedores</span><small>Quem vencer o Jogo 5 vai direto à final</small></h3>';
+  html+='<p class="custom5-flow-label">O vencedor do Jogo 1 enfrenta A. Depois, o vencedor desse confronto encara o vencedor do Jogo 2.</p><div class="custom5-flow-scroll"><div class="custom5-flow">';
+  html+=custom5GameCard(g3,'JOGO 3','A × vencedor do Jogo 1. O perdedor cai para o Jogo 6.',d,color,'MD1');
+  html+=custom5Arrow('Vencedor J3');
+  html+=custom5GameCard(g5,'JOGO 5','Vencedor do Jogo 2 × vencedor do Jogo 3. Perdedor cai para a semifinal.',d,color,'MD1');
+  html+=custom5Arrow('Vencedor J5');
+  html+='<div class="custom5-destination"><strong>→ GRANDE FINAL</strong>Avança sem passar pela semifinal</div>';
+  html+='</div></div></section>';
+  html+='<section class="custom5-lane lower"><h3 class="custom5-section-title"><span>LOWER BRACKET · caminho de sobrevivência</span><small>Perdeu aqui, está eliminado ou define o 3º/4º lugar</small></h3>';
+  html+='<p class="custom5-flow-label">O vencedor do Jogo 4 segue adiante; depois, o vencedor do Jogo 6 enfrenta o perdedor do Jogo 5 na semifinal.</p><div class="custom5-flow-scroll"><div class="custom5-flow">';
+  html+=custom5GameCard(g4,'JOGO 4','Perdedores dos Jogos 1 e 2. Quem perder termina em 5º lugar.',d,color,'MD1');
+  html+=custom5Arrow('Vencedor J4');
+  html+=custom5GameCard(g6,'JOGO 6','Vencedor do Jogo 4 × perdedor do Jogo 3. Quem perder fica em 4º.',d,color,'MD1');
+  html+=custom5Arrow('Vencedor J6');
+  html+=custom5GameCard(g7,'SEMIFINAL · JOGO 7','Perdedor do Jogo 5 × vencedor do Jogo 6. Quem perder fica em 3º.',d,color,'MD1');
+  html+=custom5Arrow('Vencedor J7');
+  html+='<div class="custom5-destination"><strong>→ GRANDE FINAL</strong>Enfrenta o vencedor do Jogo 5</div>';
+  html+='</div></div></section>';
+  html+='<section class="custom5-grand-final"><h3 class="custom5-section-title">GRANDE FINAL · MD3</h3><div class="custom5-final-sources"><span class="custom5-final-source">Vencedor do Jogo 5 ↓</span><span class="custom5-final-source lower-source">Vencedor da semifinal ↓</span></div>';
+  html+=custom5GameCard(gf,'FINAL','Campeão e vice-campeão da modalidade.',d,color,'MD3');
+  html+='</section></div>';
+  return html;
+}
+
+function double4Diagram(d,color){
+  var r=d.rounds, g1=r[0][0], g2=r[0][1], uf=r[1][0], lr=r[1][1], lf=r[2][0], gf=r[3][0];
+  var html='<div class="custom5-diagram">';
+  html+='<section class="custom5-initial"><h3 class="custom5-section-title"><span>Sorteio da primeira rodada</span><small>Quatro equipes · duas partidas iniciais</small></h3><div class="custom5-initial-grid">';
+  html+=custom5GameCard(g1,'JOGO 1','Vencedor avança à final do upper; perdedor cai para o lower.',d,color,'MD1');
+  html+=custom5GameCard(g2,'JOGO 2','Vencedor avança à final do upper; perdedor cai para o lower.',d,color,'MD1');
+  html+='</div></section>';
+  html+='<section class="custom5-lane upper"><h3 class="custom5-section-title"><span>UPPER BRACKET · chave superior</span><small>O vencedor vai direto à grande final</small></h3><div class="custom5-flow-scroll"><div class="custom5-flow">';
+  html+=custom5GameCard(uf,'FINAL DO UPPER','Vencedor do Jogo 1 × vencedor do Jogo 2.',d,color,'MD1');
+  html+=custom5Arrow('Vencedor do upper');
+  html+='<div class="custom5-destination"><strong>→ GRANDE FINAL</strong>Classificado pela chave superior</div></div></div></section>';
+  html+='<section class="custom5-lane lower"><h3 class="custom5-section-title"><span>LOWER BRACKET · chave inferior</span><small>Derrota aqui elimina da disputa pelo título</small></h3><div class="custom5-flow-scroll"><div class="custom5-flow">';
+  html+=custom5GameCard(lr,'PRIMEIRA DO LOWER','Perdedores dos Jogos 1 e 2. Quem perder fica em 4º lugar.',d,color,'MD1');
+  html+=custom5Arrow('Vencedor do lower');
+  html+=custom5GameCard(lf,'FINAL DO LOWER','Vencedor da primeira do lower × perdedor da final do upper.',d,color,'MD1');
+  html+=custom5Arrow('Vencedor do lower');
+  html+='<div class="custom5-destination"><strong>→ GRANDE FINAL</strong>Classificado pela chave inferior</div></div></div></section>';
+  html+='<section class="custom5-grand-final"><h3 class="custom5-section-title">GRANDE FINAL · MD3</h3><div class="custom5-final-sources"><span class="custom5-final-source">Vencedor do upper ↓</span><span class="custom5-final-source lower-source">Vencedor do lower ↓</span></div>';
+  html+=custom5GameCard(gf,'FINAL','Decide o campeão e o vice-campeão do CS.',d,color,'MD3');
+  html+='</section></div>';
+  return html;
+}
+
 function renderModality(m){
   var d=state.draws[m.key];
   var html=head(m);
@@ -627,6 +758,19 @@ function renderModality(m){
   if(d.type==='error') return html+'<div class="disclaimer">'+esc(d.message)+'</div>';
   d.__key=m.key;
   var C=m.color;
+
+  if(d.type==='double4'){
+    html += stageBlock('Chave de dupla eliminação', double4Diagram(d,C));
+    return html + placementBlock(m);
+  }
+
+  if(d.type==='custom5'){
+    var cr=d.rounds||[];
+    var slotOrder=['A','B','C','D','E'];
+    html += stageBlock('Posições sorteadas','<div class="tbl-wrap"><table><thead><tr><th>Posição</th><th>Equipe</th></tr></thead><tbody>'+slotOrder.map(function(slot){ return '<tr><td><b>'+slot+'</b></td><td>'+esc(d.slots&&d.slots[slot]||'A definir')+'</td></tr>'; }).join('')+'</tbody></table></div>');
+    html += custom5Diagram(cr,d,C);
+    return html + placementBlock(m);
+  }
 
   if(d.type==='swiss2'){
     var rec=records(state.teams,d.rounds);
@@ -690,7 +834,7 @@ function renderModality(m){
 
   if(d.type==='rr'){
     html += d.rounds.map(function(r,i){ return stageBlock('Rodada '+(i+1), matchList(r,d,C)); }).join('');
-    html += stageBlock('Classificação', tableStandings(rrTeams(d.rounds), d.rounds, {top2:true}));
+    html += stageBlock('Classificação', tableStandings(rrTeams(d.rounds), d.rounds, {top2:true, goals:!!d.drawInGroups}));
     html += stageBlock('Final','<div class="third-wrap">'+bkNode(d.final,d,C,'Final')+'</div>');
     return html + placementBlock(m);
   }
@@ -755,24 +899,43 @@ function renderGeral(){
   el.innerHTML=html;
 }
 
+function loadLocalStorageFallback(){
+  var t=lsGet('teams'); if(Array.isArray(t)) state.teams=t;
+  var c=lsGet('config'); if(c && Array.isArray(c.pts)) state.config=c;
+  MODALITIES.forEach(function(m){ var d=lsGet(m.key); if(d) state.draws[m.key]=d; });
+  indexAll();
+  render();
+}
+
 function loadPublishedJSON(){
-  fetch('./chaves-dados.json', {cache:'no-store'})
-    .then(function(r){ return r.ok ? r.json() : null; })
+  var bannerEl = document.getElementById('banner');
+
+  // Navegadores bloqueiam fetch de arquivos vizinhos quando a página é aberta via file://.
+  // Nesse caso, os arquivos precisam ser servidos por HTTP (site publicado ou servidor local).
+  if(window.location.protocol === 'file:'){
+    loadLocalStorageFallback();
+    bannerEl.textContent = 'O navegador não permite carregar chaves-dados.json automaticamente quando este HTML é aberto diretamente do computador (file://). Abra a pasta por um servidor local, por exemplo: py -m http.server 8000, e acesse http://localhost:8000/chaves_corrigido.html.';
+    return;
+  }
+
+  var jsonUrl = new URL('chaves-dados.json', window.location.href);
+  fetch(jsonUrl.href, {cache:'no-store'})
+    .then(function(r){
+      // Antes, respostas 404 viravam null e encerravam o carregamento sem aviso.
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
     .then(function(data){
-      if(!data || !Array.isArray(data.teams)) return;
+      if(!data || !Array.isArray(data.teams)) throw new Error('JSON inválido: era esperada uma propriedade "teams" em formato de lista.');
       state.teams = data.teams;
       state.config = data.config || {pts:DEFAULT_PTS.slice()};
       state.draws = data.draws || {};
-      indexAll();
+          indexAll();
       render();
     })
-    .catch(function(){
-      // Fallback para o localStorage se o arquivo não estiver acessível via fetch direto
-      var t=lsGet('teams'); if(Array.isArray(t)) state.teams=t;
-      var c=lsGet('config'); if(c && Array.isArray(c.pts)) state.config=c;
-      MODALITIES.forEach(function(m){ var d=lsGet(m.key); if(d) state.draws[m.key]=d; });
-      indexAll();
-      render();
+    .catch(function(err){
+      loadLocalStorageFallback();
+      bannerEl.textContent = 'Não foi possível carregar ' + jsonUrl.pathname + ' (' + (err && err.message ? err.message : 'erro desconhecido') + '). Confirme se chaves-dados.json foi publicado na mesma pasta deste HTML e se o nome do arquivo está escrito exatamente assim. Foram usados os dados locais salvos neste navegador, quando disponíveis.';
     });
 }
 
