@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T13:31:39.379Z",
+  "exportedAt": "2026-10-17T15:01:40.260Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -507,7 +507,8 @@
         "locked": false,
         "nd": true
       },
-      "tied": null
+      "tied": null,
+      "__key": "clash"
     },
     "geo": {
       "type": "rr",
@@ -655,7 +656,7 @@
     "fifa": {
       "type": "rr",
       "fmts": {
-        "round": "free",
+        "round": "freeK",
         "final": "freeK"
       },
       "drawInGroups": true,
@@ -666,8 +667,8 @@
             "a": "Zeros e Uma",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": false
@@ -677,8 +678,8 @@
             "a": "PET_SI",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 5,
             "pen": null,
             "locked": false,
             "nd": false
@@ -690,8 +691,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 4,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": false
@@ -792,7 +793,8 @@
         "locked": false,
         "nd": true
       },
-      "tied": null
+      "tied": null,
+      "__key": "fifa"
     },
     "chess": {
       "type": "swissN",
@@ -807,8 +809,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "Zeros e Uma",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "tagA": "brancas",
@@ -819,8 +821,8 @@
             "a": "Discípulos de Lilith",
             "b": "PET_SI",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "tagA": "brancas",
@@ -838,7 +840,8 @@
             "bye": true
           }
         ]
-      ]
+      ],
+      "__key": "chess"
     },
     "truco": {
       "type": "rr",
@@ -980,7 +983,8 @@
         "locked": false,
         "nd": true
       },
-      "tied": null
+      "tied": null,
+      "__key": "truco"
     }
   }
 }
