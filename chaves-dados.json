@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T22:14:21.680Z",
+  "exportedAt": "2026-10-17T22:31:50.430Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -227,12 +227,10 @@
       "__key": "cs2"
     },
     "valorant": {
-      "type": "rr",
+      "type": "rrplain",
       "fmts": {
-        "round": "freeK",
-        "final": "bo3"
+        "round": "freeK"
       },
-      "drawInGroups": false,
       "rounds": [
         [
           {
@@ -336,8 +334,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 9,
+            "sb": 10,
             "pen": null,
             "locked": false,
             "nd": true
@@ -347,26 +345,14 @@
             "a": "pqfundao",
             "b": "Zeros e Uma",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 10,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": true
           }
         ]
       ],
-      "final": {
-        "id": "valorant-final",
-        "a": null,
-        "b": null,
-        "stage": "final",
-        "sa": null,
-        "sb": null,
-        "pen": null,
-        "locked": false,
-        "nd": true
-      },
-      "tied": null,
       "__key": "valorant"
     },
     "clash": {
