@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T19:32:58.101Z",
+  "exportedAt": "2026-10-17T21:15:43.123Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -65,8 +65,8 @@
             "a": "pqfundao",
             "b": "Black Sheep SXG Esports",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": true
@@ -76,8 +76,8 @@
             "a": "Zeros e Uma",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -87,21 +87,21 @@
           {
             "id": "lol-g5",
             "a": "PET_SI",
-            "b": null,
+            "b": "Black Sheep SXG Esports",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": true
           },
           {
             "id": "lol-g6",
-            "a": null,
-            "b": null,
+            "a": "Zeros e Uma",
+            "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": true
@@ -110,8 +110,8 @@
         [
           {
             "id": "lol-g7",
-            "a": null,
-            "b": null,
+            "a": "PET_SI",
+            "b": "pqfundao",
             "stage": "sf",
             "sa": null,
             "sb": null,
@@ -123,7 +123,7 @@
         [
           {
             "id": "lol-gf",
-            "a": null,
+            "a": "Black Sheep SXG Esports",
             "b": null,
             "stage": "final",
             "sa": null,
@@ -223,7 +223,8 @@
             "nd": true
           }
         ]
-      ]
+      ],
+      "__key": "cs2"
     },
     "valorant": {
       "type": "rr",
@@ -365,7 +366,8 @@
         "locked": false,
         "nd": true
       },
-      "tied": null
+      "tied": null,
+      "__key": "valorant"
     },
     "clash": {
       "type": "rr",
@@ -507,7 +509,8 @@
         "locked": false,
         "nd": true
       },
-      "tied": null
+      "tied": null,
+      "__key": "clash"
     },
     "geo": {
       "type": "rr",
