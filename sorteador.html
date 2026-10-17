@@ -336,9 +336,9 @@ var MODALITIES = [
   { key:'chess', label:'Xadrez', color:'var(--c-chess)', type:'rrplain', chess:true,
     fmts:{round:'chess'},
     note:'Todos contra todos, sem final. Vitória vale 1 ponto, empate ½ ponto e derrota 0. A classificação final sai da pontuação; equipes com a mesma pontuação dividem a posição.' },
-  { key:'truco', label:'Truco', color:'var(--c-truco)', type:'rr',
-    fmts:{round:'bo3', final:'bo3'},
-    note:'Todos contra todos em séries MD3. Cada confronto tem um vencedor; os dois primeiros disputam a final MD3. Empate na classificação é resolvido por confronto direto; persistindo, decisão da comissão.' }
+  { key:'truco', label:'Truco', color:'var(--c-truco)', type:'rrplain',
+    fmts:{round:'bo3'},
+    note:'Todos contra todos em séries MD3, sem final. Cada confronto tem um vencedor (vitória vale 1 ponto). A classificação final sai da pontuação; equipes com a mesma pontuação dividem a posição.' }
 ];
 
 var DEFAULT_PTS = [250,180,150,120,100,80,60,40];

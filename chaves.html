@@ -359,7 +359,7 @@ var MODALITIES = [
   { key:'geo', label:'Geoguessr', color:'var(--c-geo)', type:'rr', fmts:{round:'bo1', final:'bo1'}, note:'Todos contra todos em duelos 1v1; os dois primeiros disputam a final. Desempate por confronto direto; persistindo, decisão da comissão.' },
   { key:'fifa', label:'FIFA', color:'var(--c-fifa)', type:'rr', drawInGroups:true, fmts:{round:'free', final:'freeK'}, note:'Todos contra todos com placar de gols: vitória 3 pontos, empate 1, derrota 0; desempate por saldo de gols, gols marcados e confronto direto. Os dois primeiros disputam a final.' },
   { key:'chess', label:'Xadrez', color:'var(--c-chess)', type:'rrplain', chess:true, fmts:{round:'chess'}, note:'Todos contra todos, sem final. Vitória vale 1 ponto, empate ½ ponto e derrota 0. A classificação final sai da pontuação; equipes com a mesma pontuação dividem a posição.' },
-  { key:'truco', label:'Truco', color:'var(--c-truco)', type:'rr', fmts:{round:'bo3', final:'bo3'}, note:'Todos contra todos em séries MD3; os dois primeiros disputam a final. Desempate por confronto direto; persistindo, decisão da comissão.' }
+  { key:'truco', label:'Truco', color:'var(--c-truco)', type:'rrplain', fmts:{round:'bo3'}, note:'Todos contra todos em séries MD3, sem final. Vitória vale 1 ponto; equipes com a mesma pontuação dividem a posição.' }
 ];
 
 var DEFAULT_PTS = [250,180,150,120,100,80,60,40];

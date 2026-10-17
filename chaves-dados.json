@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T17:53:28.924Z",
+  "exportedAt": "2026-10-17T18:05:08.428Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -223,8 +223,7 @@
             "nd": true
           }
         ]
-      ],
-      "__key": "cs2"
+      ]
     },
     "valorant": {
       "type": "rr",
@@ -366,8 +365,7 @@
         "locked": false,
         "nd": true
       },
-      "tied": null,
-      "__key": "valorant"
+      "tied": null
     },
     "clash": {
       "type": "rr",
@@ -509,8 +507,7 @@
         "locked": false,
         "nd": true
       },
-      "tied": null,
-      "__key": "clash"
+      "tied": null
     },
     "geo": {
       "type": "rr",
@@ -919,12 +916,10 @@
       "__key": "chess"
     },
     "truco": {
-      "type": "rr",
+      "type": "rrplain",
       "fmts": {
-        "round": "bo1",
-        "final": "bo3"
+        "round": "freeK"
       },
-      "drawInGroups": false,
       "rounds": [
         [
           {
@@ -932,8 +927,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": 0,
-            "sb": 1,
+            "sa": 16,
+            "sb": 24,
             "pen": null,
             "locked": false,
             "nd": true
@@ -943,8 +938,8 @@
             "a": "pqfundao",
             "b": "Zeros e Uma",
             "stage": "round",
-            "sa": 1,
-            "sb": 0,
+            "sa": 24,
+            "sb": 18,
             "pen": null,
             "locked": false,
             "nd": true
@@ -956,8 +951,8 @@
             "a": "PET_SI",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 20,
+            "sb": 24,
             "pen": null,
             "locked": false,
             "nd": true
@@ -967,8 +962,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "pqfundao",
             "stage": "round",
-            "sa": 0,
-            "sb": 1,
+            "sa": 15,
+            "sb": 24,
             "pen": null,
             "locked": false,
             "nd": true
@@ -980,8 +975,8 @@
             "a": "PET_SI",
             "b": "Zeros e Uma",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 24,
+            "sb": 20,
             "pen": null,
             "locked": false,
             "nd": true
@@ -991,8 +986,8 @@
             "a": "Discípulos de Lilith",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 19,
+            "sb": 24,
             "pen": null,
             "locked": false,
             "nd": true
@@ -1004,8 +999,8 @@
             "a": "PET_SI",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 19,
+            "sb": 24,
             "pen": null,
             "locked": false,
             "nd": true
@@ -1015,8 +1010,8 @@
             "a": "Zeros e Uma",
             "b": "Black Sheep SXG Esports",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 24,
+            "sb": 21,
             "pen": null,
             "locked": false,
             "nd": true
@@ -1028,8 +1023,8 @@
             "a": "PET_SI",
             "b": "Black Sheep SXG Esports",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 24,
+            "sb": 11,
             "pen": null,
             "locked": false,
             "nd": true
@@ -1039,26 +1034,14 @@
             "a": "Zeros e Uma",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 17,
+            "sb": 24,
             "pen": null,
             "locked": false,
             "nd": true
           }
         ]
       ],
-      "final": {
-        "id": "truco-final",
-        "a": null,
-        "b": null,
-        "stage": "final",
-        "sa": null,
-        "sb": null,
-        "pen": null,
-        "locked": false,
-        "nd": true
-      },
-      "tied": null,
       "__key": "truco"
     }
   }
