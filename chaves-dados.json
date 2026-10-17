@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T17:06:49.195Z",
+  "exportedAt": "2026-10-17T17:53:28.924Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -223,7 +223,8 @@
             "nd": true
           }
         ]
-      ]
+      ],
+      "__key": "cs2"
     },
     "valorant": {
       "type": "rr",
@@ -365,7 +366,8 @@
         "locked": false,
         "nd": true
       },
-      "tied": null
+      "tied": null,
+      "__key": "valorant"
     },
     "clash": {
       "type": "rr",
@@ -507,7 +509,8 @@
         "locked": false,
         "nd": true
       },
-      "tied": null
+      "tied": null,
+      "__key": "clash"
     },
     "geo": {
       "type": "rr",
@@ -796,11 +799,11 @@
       "__key": "fifa"
     },
     "chess": {
-      "type": "swissN",
+      "type": "rrplain",
+      "chess": true,
       "fmts": {
         "round": "chess"
       },
-      "maxRounds": 3,
       "rounds": [
         [
           {
@@ -811,9 +814,7 @@
             "sa": 0,
             "sb": 1,
             "pen": null,
-            "locked": false,
-            "tagA": "brancas",
-            "tagB": "pretas"
+            "locked": false
           },
           {
             "id": "chess-r0-m1",
@@ -823,20 +824,95 @@
             "sa": 0,
             "sb": 1,
             "pen": null,
-            "locked": false,
-            "tagA": "brancas",
-            "tagB": "pretas"
+            "locked": false
+          }
+        ],
+        [
+          {
+            "id": "chess-r1-m0",
+            "a": "pqfundao",
+            "b": "Zeros e Uma",
+            "stage": "round",
+            "sa": 0,
+            "sb": 1,
+            "pen": null,
+            "locked": false
           },
           {
-            "id": "chess-r0-m2",
-            "a": "pqfundao",
-            "b": null,
+            "id": "chess-r1-m1",
+            "a": "Black Sheep SXG Esports",
+            "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
-            "locked": false,
-            "bye": true
+            "locked": false
+          }
+        ],
+        [
+          {
+            "id": "chess-r2-m0",
+            "a": "pqfundao",
+            "b": "PET_SI",
+            "stage": "round",
+            "sa": 0,
+            "sb": 1,
+            "pen": null,
+            "locked": false
+          },
+          {
+            "id": "chess-r2-m1",
+            "a": "Zeros e Uma",
+            "b": "Discípulos de Lilith",
+            "stage": "round",
+            "sa": 1,
+            "sb": 0,
+            "pen": null,
+            "locked": false
+          }
+        ],
+        [
+          {
+            "id": "chess-r3-m0",
+            "a": "pqfundao",
+            "b": "Discípulos de Lilith",
+            "stage": "round",
+            "sa": 1,
+            "sb": 0,
+            "pen": null,
+            "locked": false
+          },
+          {
+            "id": "chess-r3-m1",
+            "a": "PET_SI",
+            "b": "Black Sheep SXG Esports",
+            "stage": "round",
+            "sa": 1,
+            "sb": 0,
+            "pen": null,
+            "locked": false
+          }
+        ],
+        [
+          {
+            "id": "chess-r4-m0",
+            "a": "pqfundao",
+            "b": "Black Sheep SXG Esports",
+            "stage": "round",
+            "sa": 1,
+            "sb": 0,
+            "pen": null,
+            "locked": false
+          },
+          {
+            "id": "chess-r4-m1",
+            "a": "PET_SI",
+            "b": "Zeros e Uma",
+            "stage": "round",
+            "sa": 1,
+            "sb": 0,
+            "pen": null,
+            "locked": false
           }
         ]
       ],

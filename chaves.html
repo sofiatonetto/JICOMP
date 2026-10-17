@@ -358,7 +358,7 @@ var MODALITIES = [
   { key:'clash', label:'Clash Royale', color:'var(--c-clash)', type:'rr', fmts:{round:'bo3', final:'bo5'}, note:'Todos contra todos em séries MD3; os dois primeiros disputam a final MD5. Desempate por confronto direto; persistindo, critério da comissão.' },
   { key:'geo', label:'Geoguessr', color:'var(--c-geo)', type:'rr', fmts:{round:'bo1', final:'bo1'}, note:'Todos contra todos em duelos 1v1; os dois primeiros disputam a final. Desempate por confronto direto; persistindo, decisão da comissão.' },
   { key:'fifa', label:'FIFA', color:'var(--c-fifa)', type:'rr', drawInGroups:true, fmts:{round:'free', final:'freeK'}, note:'Todos contra todos com placar de gols: vitória 3 pontos, empate 1, derrota 0; desempate por saldo de gols, gols marcados e confronto direto. Os dois primeiros disputam a final.' },
-  { key:'chess', label:'Xadrez', color:'var(--c-chess)', type:'swissN', maxRounds:3, fmts:{round:'chess'}, note:'Sistema suíço de 3 rodadas.' },
+  { key:'chess', label:'Xadrez', color:'var(--c-chess)', type:'rrplain', chess:true, fmts:{round:'chess'}, note:'Todos contra todos, sem final. Vitória vale 1 ponto, empate ½ ponto e derrota 0. A classificação final sai da pontuação; equipes com a mesma pontuação dividem a posição.' },
   { key:'truco', label:'Truco', color:'var(--c-truco)', type:'rr', fmts:{round:'bo3', final:'bo3'}, note:'Todos contra todos em séries MD3; os dois primeiros disputam a final. Desempate por confronto direto; persistindo, decisão da comissão.' }
 ];
 
@@ -432,7 +432,7 @@ function standings(teams, rounds, opts){
     if(opts.goals){ A.gp+=m.sa; A.gc+=m.sb; B.gp+=m.sb; B.gc+=m.sa; }
     if(res==='A'){ A.v++; B.d++; A.pts += opts.goals?3:1; }
     else if(res==='B'){ B.v++; A.d++; B.pts += opts.goals?3:1; }
-    else { A.e++; B.e++; A.pts+=1; B.pts+=1; }
+    else { A.e++; B.e++; var dp=(opts&&opts.chess)?0.5:1; A.pts+=dp; B.pts+=dp; }
   }); });
   var rows=Object.keys(t).map(function(k){ var r=t[k]; r.sg=r.gp-r.gc; return r; });
   rows.sort(function(x,y){ return y.pts-x.pts || (opts.goals ? (y.sg-x.sg || y.gp-x.gp || y.v-x.v) : (y.v-x.v || y.sg-x.sg || y.gp-x.gp)) || x.team.localeCompare(y.team); });
@@ -464,7 +464,7 @@ function index(key){
   }
   state.idx[key]=idx;
 }
-function indexAll(){ MODALITIES.forEach(function(m){ index(m.key); }); }
+function indexAll(){ MODALITIES.forEach(function(m){ var dd=state.draws[m.key]; if(dd&&dd.type!==m.type&&dd.type!=='error') delete state.draws[m.key]; index(m.key); }); }
 
 function placement(key){
   var m = MODALITIES.filter(function(x){return x.key===key;})[0];
@@ -536,7 +536,7 @@ function placement(key){
   if(d.type==='rrplain'){
     var doneP=d.rounds.every(function(r){ return r.every(function(mm){ return !mm.a||!mm.b||decided(mm); }); });
     if(!doneP) return {ready:false, why:'Aguardando o fim de todas as rodadas.', groups:[]};
-    var rowsP=standings(rrTeams(d.rounds),d.rounds,{});
+    var rowsP=standings(rrTeams(d.rounds),d.rounds,{chess:!!d.chess});
     tieGroups(rowsP,function(r){ return String(r.pts); }).forEach(push);
     return {ready:true, groups:toPositions(groups)};
   }
@@ -671,7 +671,7 @@ function bracket(rounds, draw, color, captions){
 function tableStandings(teams, rounds, opts){
   opts=opts||{};
   var rows=standings(teams,rounds,opts);
-  var goals=!!opts.goals, dr=!!opts.goals;
+  var goals=!!opts.goals, dr=!!opts.goals||!!opts.chess;
   var th='<tr><th class="num">#</th><th>Equipe</th><th class="num">J</th><th class="num">V</th>'+
     (dr?'<th class="num">E</th>':'')+'<th class="num">D</th>'+
     (goals?'<th class="num">GP</th><th class="num">GC</th><th class="num">SG</th>':'')+'<th class="num">Pts</th></tr>';
@@ -841,7 +841,7 @@ function renderModality(m){
 
   if(d.type==='rrplain'){
     html += d.rounds.map(function(r,i){ return stageBlock('Rodada '+(i+1), matchList(r,d,C)); }).join('');
-    html += stageBlock('Classificação', tableStandings(rrTeams(d.rounds), d.rounds, {}));
+    html += stageBlock('Classificação', tableStandings(rrTeams(d.rounds), d.rounds, {chess:!!d.chess}));
     return html + placementBlock(m);
   }
   return html;
