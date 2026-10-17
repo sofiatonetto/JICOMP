@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T12:24:09.754Z",
+  "exportedAt": "2026-10-17T12:49:59.125Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -534,8 +534,8 @@
             "a": "PET_SI",
             "b": "Black Sheep SXG Esports",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -547,8 +547,8 @@
             "a": "Zeros e Uma",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -558,8 +558,8 @@
             "a": "pqfundao",
             "b": "PET_SI",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": true
@@ -571,8 +571,8 @@
             "a": "Zeros e Uma",
             "b": "Black Sheep SXG Esports",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
