@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T13:16:17.121Z",
+  "exportedAt": "2026-10-17T13:31:39.379Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -223,8 +223,7 @@
             "nd": true
           }
         ]
-      ],
-      "__key": "cs2"
+      ]
     },
     "valorant": {
       "type": "rr",
@@ -514,7 +513,7 @@
       "type": "rr",
       "fmts": {
         "round": "bo1",
-        "final": "bo1"
+        "final": "bo3"
       },
       "drawInGroups": false,
       "rounds": [
@@ -644,8 +643,8 @@
         "a": "Zeros e Uma",
         "b": "Discípulos de Lilith",
         "stage": "final",
-        "sa": null,
-        "sb": null,
+        "sa": 1,
+        "sb": 2,
         "pen": null,
         "locked": false,
         "nd": true
@@ -839,8 +838,7 @@
             "bye": true
           }
         ]
-      ],
-      "__key": "chess"
+      ]
     },
     "truco": {
       "type": "rr",
