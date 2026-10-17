@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T16:13:38.526Z",
+  "exportedAt": "2026-10-17T17:04:30.213Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -762,8 +762,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "Zeros e Uma",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 7,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": false
@@ -773,8 +773,8 @@
             "a": "Discípulos de Lilith",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 6,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": false
@@ -783,8 +783,8 @@
       ],
       "final": {
         "id": "fifa-final",
-        "a": null,
-        "b": null,
+        "a": "Discípulos de Lilith",
+        "b": "Black Sheep SXG Esports",
         "stage": "final",
         "sa": null,
         "sb": null,
