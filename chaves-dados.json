@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T16:01:56.693Z",
+  "exportedAt": "2026-10-17T16:13:38.526Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -749,8 +749,8 @@
             "a": "Discípulos de Lilith",
             "b": "Zeros e Uma",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 7,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": false
