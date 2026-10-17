@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T18:05:08.428Z",
+  "exportedAt": "2026-10-17T19:32:58.101Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -41,8 +41,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "Zeros e Uma",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -50,6 +50,30 @@
           {
             "id": "lol-g2",
             "a": "PET_SI",
+            "b": "Discípulos de Lilith",
+            "stage": "round",
+            "sa": 1,
+            "sb": 0,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "lol-g3",
+            "a": "pqfundao",
+            "b": "Black Sheep SXG Esports",
+            "stage": "round",
+            "sa": null,
+            "sb": null,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          },
+          {
+            "id": "lol-g4",
+            "a": "Zeros e Uma",
             "b": "Discípulos de Lilith",
             "stage": "round",
             "sa": null,
@@ -61,32 +85,8 @@
         ],
         [
           {
-            "id": "lol-g3",
-            "a": "pqfundao",
-            "b": null,
-            "stage": "round",
-            "sa": null,
-            "sb": null,
-            "pen": null,
-            "locked": false,
-            "nd": true
-          },
-          {
-            "id": "lol-g4",
-            "a": null,
-            "b": null,
-            "stage": "round",
-            "sa": null,
-            "sb": null,
-            "pen": null,
-            "locked": false,
-            "nd": true
-          }
-        ],
-        [
-          {
             "id": "lol-g5",
-            "a": null,
+            "a": "PET_SI",
             "b": null,
             "stage": "round",
             "sa": null,
