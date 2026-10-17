@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T21:15:43.123Z",
+  "exportedAt": "2026-10-17T22:14:21.680Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -229,8 +229,8 @@
     "valorant": {
       "type": "rr",
       "fmts": {
-        "round": "bo9",
-        "final": "bo9"
+        "round": "freeK",
+        "final": "bo3"
       },
       "drawInGroups": false,
       "rounds": [
@@ -240,8 +240,8 @@
             "a": "Discípulos de Lilith",
             "b": "Zeros e Uma",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 10,
+            "sb": 2,
             "pen": null,
             "locked": false,
             "nd": true
@@ -251,8 +251,8 @@
             "a": "PET_SI",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 10,
             "pen": null,
             "locked": false,
             "nd": true
@@ -264,8 +264,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "Zeros e Uma",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 10,
+            "sb": 3,
             "pen": null,
             "locked": false,
             "nd": true
@@ -275,8 +275,8 @@
             "a": "Discípulos de Lilith",
             "b": "PET_SI",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 10,
+            "sb": 3,
             "pen": null,
             "locked": false,
             "nd": true
@@ -288,8 +288,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 5,
+            "sb": 10,
             "pen": null,
             "locked": false,
             "nd": true
@@ -299,8 +299,8 @@
             "a": "Zeros e Uma",
             "b": "PET_SI",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 9,
+            "sb": 10,
             "pen": null,
             "locked": false,
             "nd": true
@@ -312,8 +312,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "PET_SI",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 10,
+            "sb": 3,
             "pen": null,
             "locked": false,
             "nd": true
@@ -323,8 +323,8 @@
             "a": "pqfundao",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 8,
+            "sb": 10,
             "pen": null,
             "locked": false,
             "nd": true
