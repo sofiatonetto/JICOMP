@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T12:04:12.168Z",
+  "exportedAt": "2026-10-17T12:24:09.754Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -223,8 +223,7 @@
             "nd": true
           }
         ]
-      ],
-      "__key": "cs2"
+      ]
     },
     "valorant": {
       "type": "rr",
@@ -366,8 +365,7 @@
         "locked": false,
         "nd": true
       },
-      "tied": null,
-      "__key": "valorant"
+      "tied": null
     },
     "clash": {
       "type": "rr",
@@ -509,8 +507,7 @@
         "locked": false,
         "nd": true
       },
-      "tied": null,
-      "__key": "clash"
+      "tied": null
     },
     "geo": {
       "type": "rr",
@@ -526,8 +523,8 @@
             "a": "pqfundao",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": true
@@ -795,8 +792,7 @@
         "locked": false,
         "nd": true
       },
-      "tied": null,
-      "__key": "fifa"
+      "tied": null
     },
     "chess": {
       "type": "swissN",
@@ -842,8 +838,7 @@
             "bye": true
           }
         ]
-      ],
-      "__key": "chess"
+      ]
     },
     "truco": {
       "type": "rr",
@@ -985,8 +980,7 @@
         "locked": false,
         "nd": true
       },
-      "tied": null,
-      "__key": "truco"
+      "tied": null
     }
   }
 }
