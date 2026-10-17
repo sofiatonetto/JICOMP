@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T12:49:59.125Z",
+  "exportedAt": "2026-10-17T13:16:17.121Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -223,7 +223,8 @@
             "nd": true
           }
         ]
-      ]
+      ],
+      "__key": "cs2"
     },
     "valorant": {
       "type": "rr",
@@ -582,8 +583,8 @@
             "a": "Discípulos de Lilith",
             "b": "PET_SI",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -595,8 +596,8 @@
             "a": "Zeros e Uma",
             "b": "PET_SI",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -606,8 +607,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -619,8 +620,8 @@
             "a": "Zeros e Uma",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -630,8 +631,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": true
@@ -640,8 +641,8 @@
       ],
       "final": {
         "id": "geo-final",
-        "a": null,
-        "b": null,
+        "a": "Zeros e Uma",
+        "b": "Discípulos de Lilith",
         "stage": "final",
         "sa": null,
         "sb": null,
@@ -838,7 +839,8 @@
             "bye": true
           }
         ]
-      ]
+      ],
+      "__key": "chess"
     },
     "truco": {
       "type": "rr",
