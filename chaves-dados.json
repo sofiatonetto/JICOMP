@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-17T23:26:09.331Z",
+  "exportedAt": "2026-10-18T00:07:11.319Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -179,8 +179,8 @@
             "a": "Zeros e Uma",
             "b": "pqfundao",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 0,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": true
@@ -188,6 +188,19 @@
           {
             "id": "cs2-lower-r1",
             "a": "PET_SI",
+            "b": "Black Sheep SXG Esports",
+            "stage": "round",
+            "sa": 0,
+            "sb": 1,
+            "pen": null,
+            "locked": false,
+            "nd": true
+          }
+        ],
+        [
+          {
+            "id": "cs2-lower-final",
+            "a": "Zeros e Uma",
             "b": "Black Sheep SXG Esports",
             "stage": "round",
             "sa": null,
@@ -199,21 +212,8 @@
         ],
         [
           {
-            "id": "cs2-lower-final",
-            "a": null,
-            "b": null,
-            "stage": "round",
-            "sa": null,
-            "sb": null,
-            "pen": null,
-            "locked": false,
-            "nd": true
-          }
-        ],
-        [
-          {
             "id": "cs2-grand-final",
-            "a": null,
+            "a": "pqfundao",
             "b": null,
             "stage": "final",
             "sa": null,
