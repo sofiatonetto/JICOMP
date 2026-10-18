@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-18T00:07:11.319Z",
+  "exportedAt": "2026-10-18T00:49:18.610Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -203,8 +203,8 @@
             "a": "Zeros e Uma",
             "b": "Black Sheep SXG Esports",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -214,7 +214,7 @@
           {
             "id": "cs2-grand-final",
             "a": "pqfundao",
-            "b": null,
+            "b": "Zeros e Uma",
             "stage": "final",
             "sa": null,
             "sb": null,
