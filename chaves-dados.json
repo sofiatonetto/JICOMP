@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-10-18T13:28:56.114Z",
+  "exportedAt": "2026-10-18T14:00:15.888Z",
   "teams": [
     "Black Sheep SXG Esports",
     "Zeros e Uma",
@@ -452,8 +452,8 @@
             "a": "pqfundao",
             "b": "PET_SI",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 1,
+            "sb": 2,
             "pen": null,
             "locked": false,
             "nd": true
@@ -465,8 +465,8 @@
             "a": "Black Sheep SXG Esports",
             "b": "PET_SI",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 2,
+            "sb": 0,
             "pen": null,
             "locked": false,
             "nd": true
@@ -476,8 +476,8 @@
             "a": "pqfundao",
             "b": "Discípulos de Lilith",
             "stage": "round",
-            "sa": null,
-            "sb": null,
+            "sa": 2,
+            "sb": 1,
             "pen": null,
             "locked": false,
             "nd": true
@@ -486,11 +486,11 @@
       ],
       "final": {
         "id": "clash-final",
-        "a": null,
-        "b": null,
+        "a": "Zeros e Uma",
+        "b": "Black Sheep SXG Esports",
         "stage": "final",
-        "sa": null,
-        "sb": null,
+        "sa": 3,
+        "sb": 1,
         "pen": null,
         "locked": false,
         "nd": true
