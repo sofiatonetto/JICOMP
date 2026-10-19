@@ -910,7 +910,10 @@ function placement(key){
     var drp=d.rounds||[], lrp=drp[1]&&drp[1][1], lfp=drp[2]&&drp[2][0], gff=drp[3]&&drp[3][0];
     if(!lrp||!lfp||!gff||!decided(lrp)||!decided(lfp)||!decided(gff)) return {ready:false,why:'Aguardando a final do upper/lower e a grande final.',groups:[]};
     push([winnerOf(gff)]); push([loserOf(gff)]); push([loserOf(lfp)]); push([loserOf(lrp)]);
-    return {ready:true,groups:toPositions(groups)};
+    /* Discípulos de Lilith não joga o CS e fica em último lugar (5º), com a pontuação dessa posição */
+    var csAusente='Discípulos de Lilith';
+    if((state.teams||[]).indexOf(csAusente)>=0 && !placed[csAusente]) push([csAusente]);
+    return {ready:true,groups:toPositions(groups), note:'Discípulos de Lilith não disputou o CS e recebe a pontuação do último lugar.'};
   }
 
   if(d.type==='swiss2'){
